@@ -11,19 +11,19 @@ function Header() {
         </Link>
         <div className="font-body md:flex md:gap-x-6 text-lg items-center">
           <Link
-            className="rounded-lg px-2 py-2 hover:bg-blue-100 hover:text-blue-800"
+            className="rounded-lg px-4 py-2 hover:bg-blue-100 hover:text-blue-800"
             to="/about"
           >
             About
           </Link>
           <Link
-            className="rounded-lg px-2 py-2 hover:bg-blue-100 hover:text-blue-800"
+            className="rounded-lg px-4 py-2 hover:bg-blue-100 hover:text-blue-800"
             to="/contact"
           >
             Contact
           </Link>
           <Link
-            className="rounded-lg px-2 py-2 hover:bg-blue-100 hover:text-blue-800"
+            className="rounded-lg px-4 py-2 hover:bg-blue-100 hover:text-blue-800"
             to="/donate"
           >
             Donate
