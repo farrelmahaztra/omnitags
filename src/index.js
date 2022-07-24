@@ -6,6 +6,7 @@ import App from "./App";
 import About from "./routes/About";
 import Contact from "./routes/Contact";
 import Donate from "./routes/Donate";
+import Generator from "./routes/Generator";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -17,6 +18,7 @@ root.render(
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="donate" element={<Donate />} />
+        <Route path="generator" element={<Generator />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

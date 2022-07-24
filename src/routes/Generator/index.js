@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 
-function Contact() {
+function Generator() {
   return (
     <div className="min-h-screen">
       <Header />
@@ -8,4 +8,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Generator;
