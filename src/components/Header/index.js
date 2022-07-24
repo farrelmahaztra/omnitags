@@ -9,7 +9,7 @@ function Header() {
             Omni<span className="text-blue-600">Tags</span>
           </h1>
         </Link>
-        <div className="font-body md:flex md:gap-x-6 items-center">
+        <div className="font-body md:flex md:gap-x-6 text-lg items-center">
           <Link
             className="rounded-lg px-2 py-2 hover:bg-blue-100 hover:text-blue-800"
             to="/about"
