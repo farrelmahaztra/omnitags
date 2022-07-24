@@ -39,7 +39,7 @@ function Basic() {
           <div className="flex-auto w-3/5"></div>
         </div>
       </div>
-      <Footer />
+      <Footer back="/" next="../advanced" progress={100/3} />
     </div>
   );
 }
