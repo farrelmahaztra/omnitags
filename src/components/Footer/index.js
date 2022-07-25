@@ -6,7 +6,7 @@ function Footer({ next, back, progress }) {
   return (
     <div className="absolute inset-x-0 bottom-0 h-16 flex justify-center items-center">
       <Link
-        className="rounded-lg py-2 px-4 bg-blue-200 text-blue-800 hover:bg-blue-100 font-body"
+        className="p-2 rounded-lg text-slate-600 hover:bg-slate-100"
         to={back}
       >
         Back
@@ -15,7 +15,7 @@ function Footer({ next, back, progress }) {
       <Link
         className={`rounded-lg py-2 px-4 ${
           next
-            ? "bg-blue-200 text-blue-800 hover:bg-blue-100"
+            ? "text-slate-600 hover:bg-slate-100"
             : "bg-slate-200 text-slate-400 cursor-not-allowed"
         }  font-body`}
         to={next || "#"}
