@@ -13,8 +13,12 @@ function Footer({ next, back, progress }) {
       </Link>
       <Progress percentage={progress} />
       <Link
-        className="rounded-lg py-2 px-4 bg-blue-200 text-blue-800 hover:bg-blue-100 font-body"
-        to={next}
+        className={`rounded-lg py-2 px-4 ${
+          next
+            ? "bg-blue-200 text-blue-800 hover:bg-blue-100"
+            : "bg-slate-200 text-slate-400 cursor-not-allowed"
+        }  font-body`}
+        to={next || "#"}
       >
         Next
       </Link>

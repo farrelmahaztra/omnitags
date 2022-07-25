@@ -27,9 +27,12 @@ function Sidebar({ activeTab }) {
       >
         Custom
       </Link>
-      <button className="p-2 rounded-lg text-white bg-blue-500 hover:bg-blue-400">
+      <Link
+        className="p-2 rounded-lg text-white bg-blue-500 hover:bg-blue-400 text-center"
+        to="../complete"
+      >
         Generate
-      </button>
+      </Link>
     </div>
   );
 }
