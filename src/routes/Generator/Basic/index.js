@@ -2,7 +2,7 @@ import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
 
-function Basic() {
+function Basic({ state, dispatch }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -18,6 +18,9 @@ function Basic() {
                 id="img"
                 name="img"
                 accept="image/*"
+                onChange={(e) => {
+                  console.log(e.target.files[0]);
+                }}
               />
             </label>
             <label className="block mb-5">
@@ -26,6 +29,12 @@ function Basic() {
                 type="text"
                 className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
                 placeholder=""
+                onChange={(e) =>
+                  dispatch({
+                    type: "SET_TITLE",
+                    value: e.target.value,
+                  })
+                }
               />
             </label>
             <label className="block">
@@ -33,13 +42,19 @@ function Basic() {
               <textarea
                 className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
                 placeholder=""
+                onChange={(e) => {
+                  dispatch({
+                    type: "SET_DESCRIPTION",
+                    value: e.target.value,
+                  });
+                }}
               />
             </label>
           </div>
           <div className="flex-auto w-3/5"></div>
         </div>
       </div>
-      <Footer back="/" next="../advanced" progress={100/3} />
+      <Footer back="/" next="../advanced" progress={100 / 3} />
     </div>
   );
 }
