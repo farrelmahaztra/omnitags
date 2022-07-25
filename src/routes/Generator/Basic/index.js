@@ -61,7 +61,7 @@ function Basic({ state, dispatch }) {
           </div>
         </div>
       </div>
-      <Footer back="/" next="../advanced" progress={100 / 3} />
+      <Footer back="/" next="../advanced" progress={0} />
     </div>
   );
 }

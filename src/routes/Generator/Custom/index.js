@@ -13,7 +13,7 @@ function Custom() {
           <div className="flex-auto w-3/5"></div>
         </div>
       </div>
-      <Footer back="../advanced" next="/" progress={100} />
+      <Footer back="../advanced" next="/" progress={100/3*2} />
     </div>
   );
 }
