@@ -13,7 +13,7 @@ function Complete({ state }) {
           <div className="flex flex-col w-full p-6">
             <code
               id="metatags"
-              className="mt-1 font-mono relative w-full min-h-[50vh] p-6 rounded-lg text-slate-100 bg-slate-800 border-transparent focus:border-slate-900 focus:ring-0"
+              className="mt-1 font-mono relative w-full min-h-[70vh] p-6 rounded-lg text-slate-100 bg-slate-800 border-transparent focus:border-slate-900 focus:ring-0"
             >
               <span className="block">
                 &lt;
