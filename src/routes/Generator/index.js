@@ -30,7 +30,7 @@ function Generator() {
        <Route
         path="complete"
         replace
-        element={<Complete state={state} dispatch={dispatch} />}
+        element={<Complete state={state} />}
       />
     </Routes>
   );
