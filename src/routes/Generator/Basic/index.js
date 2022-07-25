@@ -10,8 +10,8 @@ function Basic({ state, dispatch }) {
       <Header />
       <div className="flex flex-auto pb-16">
         <Sidebar activeTab={"basic"} />
-        <div className="flex flex-auto w-11/12 border border-slate-200">
-          <div className="flex flex-col w-2/5 border-r p-6">
+        <div className="flex flex-auto w-11/12 border border-slate-200 overflow-hidden">
+          <div className="flex flex-col w-2/5 border-r p-6 max-h-[894px] overflow-y-scroll">
             {/* <label className="block mb-5">
               <span className="text-slate-800">Image</span>
               <input
@@ -71,7 +71,7 @@ function Basic({ state, dispatch }) {
               />
             </label>
           </div>
-          <div className="flex flex-col w-2/5 p-6">
+          <div className="flex flex-col w-2/5 p-6 max-h-[894px] overflow-y-scroll">
             <Google title={title} description={description} url={url} />
           </div>
         </div>
