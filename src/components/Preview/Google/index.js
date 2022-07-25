@@ -1,11 +1,11 @@
-function Google({ title, description }) {
+function Google({ title, description, url }) {
   return (
     <label className="block mb-5">
       <span className="text-slate-800">Google</span>
       <div className="max-w-[600px] flex flex-col relative overflow-hidden mt-5">
         <div className="leading-[18px] flex">
           <span className="text-[#202124] font-sans text-sm pr-[5px] cursor-pointer">
-            https://omnitags.io
+            {url}
           </span>
           <svg
             className="fill-[#70757a] h-[22px] w-[22px] cursor-pointer"
