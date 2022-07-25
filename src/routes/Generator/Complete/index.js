@@ -11,7 +11,10 @@ function Complete({ state }) {
         <Sidebar activeTab={""} />
         <div className="flex flex-auto w-11/12 border border-slate-200">
           <div className="flex flex-col w-full p-6">
-            <code className="mt-1 font-mono block w-full min-h-[50vh] p-6 rounded-lg text-slate-100 bg-slate-800 border-transparent focus:border-slate-900 focus:ring-0">
+            <code
+              id="metatags"
+              className="mt-1 font-mono relative w-full min-h-[50vh] p-6 rounded-lg text-slate-100 bg-slate-800 border-transparent focus:border-slate-900 focus:ring-0"
+            >
               <span className="block">
                 &lt;
                 <span className="text-red-500">title</span>&gt;{title}&lt;/
@@ -29,6 +32,17 @@ function Complete({ state }) {
                 <span className="text-blue-300">description</span>" content="
                 <span className="text-blue-300">{description}</span>"&gt;
               </span>
+              <button
+                className="absolute bottom-6 right-6 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400"
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    `<title>${title}</title>\n<meta name="title" content="${title}">\n<meta name="description" content="${description}">\n`
+                  );
+                  alert("Copied!")
+                }}
+              >
+                Copy to clipboard
+              </button>
             </code>
           </div>
         </div>
