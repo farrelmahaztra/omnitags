@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="py-10">
+    <header className="py-5">
       <nav className="relative z-50 flex mx-12 justify-start items-center">
         <Link to="/">
           <h1 className="text-3xl text-slate-900 font-title mr-12">
