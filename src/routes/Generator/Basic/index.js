@@ -36,6 +36,7 @@ function Basic({ state, dispatch }) {
                     value: e.target.value,
                   })
                 }
+                value={title || ""}
               />
             </label>
             <label className="block">
@@ -49,6 +50,7 @@ function Basic({ state, dispatch }) {
                     value: e.target.value,
                   });
                 }}
+                value={description || ""}
               />
             </label>
           </div>
