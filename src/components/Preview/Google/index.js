@@ -18,7 +18,7 @@ function Google({ title, description }) {
         </div>
         <div className="flex-1 block  mb-[3px] pt-[5px]">
           <h3 className="text-[#1a0dab] text-ellipsis overflow-hidden font-sans text-xl cursor-pointer">
-            {title || "OmniTags"}
+            {title}
           </h3>
         </div>
         <div className="flex-1 block">
@@ -26,8 +26,7 @@ function Google({ title, description }) {
             className="text-[#4d5156] font-sans text-sm"
             style={{ overflowWrap: "break-word" }}
           >
-            {description ||
-              `Meta tags can be a hassle — it's hard to keep track of which ones help or hurt your SEO ranking. Our tool makes sure your business's website serves up the right tags and unfurls perfectly on every platform.`}
+            {description}
           </p>
         </div>
       </div>
