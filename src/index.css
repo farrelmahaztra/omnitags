@@ -4,17 +4,17 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("fonts/Inter-SemiBold.ttf");
+  src: url("static/fonts/Inter-SemiBold.ttf");
 }
 
 @font-face {
   font-family: "Roboto Medium";
-  src: url("fonts/Roboto-Medium.ttf");
+  src: url("static/fonts/Roboto-Medium.ttf");
 }
 
 @font-face {
   font-family: "Roboto Regular";
-  src: url("fonts/Roboto-Regular.ttf");
+  src: url("static/fonts/Roboto-Regular.ttf");
 }
 
 body {
