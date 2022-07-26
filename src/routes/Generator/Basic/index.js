@@ -71,7 +71,7 @@ function Basic({ state, dispatch }) {
               />
             </label>
           </div>
-          <div className="flex flex-col w-2/5 p-6 max-h-[894px] overflow-y-scroll">
+          <div className="flex flex-col w-3/5 p-6 max-h-[894px] overflow-y-scroll">
             <Google title={title} description={description} url={url} />
           </div>
         </div>
