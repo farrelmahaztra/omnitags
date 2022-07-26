@@ -16,7 +16,7 @@ function App() {
           business's website serves up the right tags and unfurls perfectly on
           every platform.
         </h3>
-        <Link className="p-4 rounded-lg text-white bg-blue-500 hover:bg-blue-400" to="/generator">Create your tags 🚀</Link>
+        <Link className="p-4 rounded-lg text-white bg-blue-500 hover:bg-blue-400 font-subtitle" to="/generator">Create your tags 🚀</Link>
       </div>
     </div>
   );
