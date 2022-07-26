@@ -1,7 +1,7 @@
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
-import { Google, Twitter } from "../../../components/Preview";
+import Preview from "../../../components/Preview";
 
 function Basic({ state, dispatch }) {
   const { title, description, url, imageUrl } = state;
@@ -74,8 +74,7 @@ function Basic({ state, dispatch }) {
             </label>
           </div>
           <div className="flex flex-col w-3/5 p-6 max-h-[894px] overflow-y-scroll">
-            <Google title={title} description={description} url={url} />
-            <Twitter
+            <Preview
               title={title}
               description={description}
               url={url}
