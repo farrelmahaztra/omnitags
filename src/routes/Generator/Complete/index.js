@@ -3,7 +3,7 @@ import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
 
 function Complete({ state }) {
-  const { title, description, url } = state;
+  const { title, description, url, imageUrl } = state;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -61,7 +61,9 @@ function Complete({ state }) {
                 &lt;
                 <span className="text-red-500">meta</span> property="
                 <span className="text-blue-300">og:image</span>" content="
-                <span className="text-blue-300">ADD YOUR IMAGE URL HERE</span>
+                <span className="text-blue-300">
+                  {imageUrl || "ADD YOUR IMAGE URL HERE"}
+                </span>
                 "&gt;
               </span>
 
@@ -94,14 +96,20 @@ function Complete({ state }) {
                 &lt;
                 <span className="text-red-500">meta</span> property="
                 <span className="text-blue-300">twitter:image</span>" content="
-                <span className="text-blue-300">ADD YOUR IMAGE URL HERE</span>
+                <span className="text-blue-300">
+                  {imageUrl || "ADD YOUR IMAGE URL HERE"}
+                </span>
                 "&gt;
               </span>
               <button
                 className="absolute bottom-6 right-6 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400"
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    `<title>${title}</title>\n<meta name="title" content="${title}">\n<meta name="description" content="${description}">\n\n<meta property="og:type" content="website">\n<meta property="og:url" content="${url}">\n<meta property="og:title" content="${title}">\n<meta property="og:description" content="${description}">\n<meta property="og:image" content="ADD YOUR IMAGE URL HERE">\n\n<meta property="twitter:card" content="summary_large_image">\n<meta property="twitter:url" content="${url}">\n<meta property="twitter:title" content="${title}">\n<meta property="twitter:description" content="${description}">\n<meta property="twitter:image" content="ADD YOUR IMAGE URL HERE">\n`
+                    `<title>${title}</title>\n<meta name="title" content="${title}">\n<meta name="description" content="${description}">\n\n<meta property="og:type" content="website">\n<meta property="og:url" content="${url}">\n<meta property="og:title" content="${title}">\n<meta property="og:description" content="${description}">\n<meta property="og:image" content="${
+                      imageUrl || "ADD YOUR IMAGE URL HERE"
+                    }">\n\n<meta property="twitter:card" content="summary_large_image">\n<meta property="twitter:url" content="${url}">\n<meta property="twitter:title" content="${title}">\n<meta property="twitter:description" content="${description}">\n<meta property="twitter:image" content="${
+                      imageUrl || "ADD YOUR IMAGE URL HERE"
+                    }">\n`
                   );
                   alert("Copied!");
                 }}
