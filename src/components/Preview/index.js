@@ -1,3 +1,4 @@
 import Google from "./Google";
+import Twitter from "./Twitter";
 
-export { Google };
+export { Google, Twitter };

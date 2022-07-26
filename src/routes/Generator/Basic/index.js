@@ -1,10 +1,10 @@
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
-import { Google } from "../../../components/Preview";
+import { Google, Twitter } from "../../../components/Preview";
 
 function Basic({ state, dispatch }) {
-  const { title, description, url } = state;
+  const { title, description, url, imageUrl } = state;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -12,19 +12,6 @@ function Basic({ state, dispatch }) {
         <Sidebar activeTab={"basic"} />
         <div className="flex flex-auto w-11/12 border border-slate-200 overflow-hidden">
           <div className="flex flex-col w-2/5 border-r p-6 max-h-[894px] overflow-y-scroll">
-            {/* <label className="block mb-5">
-              <span className="text-slate-800">Image</span>
-              <input
-                className="block mt-2"
-                type="file"
-                id="img"
-                name="img"
-                accept="image/*"
-                onChange={(e) => {
-                  console.log(e.target.files[0]);
-                }}
-              />
-            </label> */}
             <label className="block mb-5">
               <span className="text-slate-800">Title</span>
               <input
@@ -56,7 +43,7 @@ function Basic({ state, dispatch }) {
               />
             </label>
             <label className="block mb-5">
-              <span className="text-slate-800">URL</span>
+              <span className="text-slate-800">Website URL</span>
               <input
                 type="text"
                 className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
@@ -70,9 +57,30 @@ function Basic({ state, dispatch }) {
                 value={url || ""}
               />
             </label>
+            <label className="block">
+              <span className="text-slate-800">Image URL</span>
+              <input
+                type="text"
+                className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
+                placeholder=""
+                onChange={(e) =>
+                  dispatch({
+                    type: "SET_IMAGE_URL",
+                    value: e.target.value,
+                  })
+                }
+                value={imageUrl || ""}
+              />
+            </label>
           </div>
           <div className="flex flex-col w-3/5 p-6 max-h-[894px] overflow-y-scroll">
             <Google title={title} description={description} url={url} />
+            <Twitter
+              title={title}
+              description={description}
+              url={url}
+              imageUrl={imageUrl}
+            />
           </div>
         </div>
       </div>

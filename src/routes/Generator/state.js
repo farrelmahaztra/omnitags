@@ -1,9 +1,9 @@
 export const initialState = {
-  image: "",
   title: "OmniTags",
   description:
     "Meta tags can be a hassle — it's hard to keep track of which ones help or hurt your SEO ranking. Our tool makes sure your business's website serves up the right tags and unfurls perfectly on every platform.",
   url: "https://omnitags.io",
+  imageUrl: "",
 };
 
 export const reducer = (state, action) => {
@@ -16,5 +16,7 @@ export const reducer = (state, action) => {
       return { ...state, description: action.value };
     case "SET_URL":
       return { ...state, url: action.value };
+    case "SET_IMAGE_URL":
+      return { ...state, imageUrl: action.value };
   }
 };
