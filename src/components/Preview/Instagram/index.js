@@ -1,6 +1,6 @@
 import defaultImage from "../../../static/img/default.jpg";
 
-function Twitter({ title, description, url, imageUrl }) {
+function Instagram({ title, description, url, imageUrl }) {
   return (
     <label className="block mb-5">
       <span className="text-slate-800">Instagram (Direct Message)</span>
@@ -18,4 +18,4 @@ function Twitter({ title, description, url, imageUrl }) {
   );
 }
 
-export default Twitter;
+export default Instagram;

@@ -2,6 +2,7 @@ import Google from "./Google";
 import Twitter from "./Twitter";
 import Instagram from "./Instagram";
 import Slack from "./Slack";
+import LINE from "./LINE";
 
 function Preview({ title, description, url, imageUrl, siteName }) {
   return (
@@ -24,6 +25,11 @@ function Preview({ title, description, url, imageUrl, siteName }) {
         description={description}
         imageUrl={imageUrl}
         siteName={siteName}
+      />
+      <LINE
+        title={title}
+        description={description}
+        imageUrl={imageUrl}
       />
     </>
   );
