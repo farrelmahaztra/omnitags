@@ -6,7 +6,7 @@ import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
 
 function Advanced({ state, dispatch }) {
-  const { title, description, url, imageUrl, siteName } = state;
+  const { title, description, url, imageUrl, siteName, locale } = state;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -14,14 +14,42 @@ function Advanced({ state, dispatch }) {
         <Sidebar activeTab={"advanced"} />
         <div className="flex flex-auto w-11/12 border border-slate-200">
           <div className="flex flex-col w-2/5 border-r p-6">
-            <label className="block mb-5">
+            <label className="block">
               <span className="text-slate-800">Site name</span>
               <TextInput
-                onChange={(e) => dispatch({
-                  type: "SET_SITENAME",
-                  value: e.target.value
-                })}
+                onChange={(e) =>
+                  dispatch({
+                    type: "SET_SITENAME",
+                    value: e.target.value,
+                  })
+                }
                 value={siteName || ""}
+              />
+            </label>
+            <label className="block mb-5">
+              <span className="text-slate-800">Locale</span>
+              <SelectInput
+                onChange={(e) =>
+                  dispatch({
+                    type: "SET_LOCALE",
+                    value: e.target.value,
+                  })
+                }
+                value={locale || ""}
+                options={[
+                  {
+                    label: "en_US",
+                    value: "en_US",
+                  },
+                  {
+                    label: "fr_FR",
+                    value: "fr_FR",
+                  },
+                  {
+                    label: "es_ES",
+                    value: "es_ES",
+                  },
+                ]}
               />
             </label>
           </div>

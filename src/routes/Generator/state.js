@@ -5,7 +5,8 @@ export const initialState = {
   url: "https://omnitags.io",
   imageUrl: "",
   objectType: "website",
-  siteName: "OmniTags"
+  siteName: "OmniTags",
+  locale: "en_US"
 };
 
 export const reducer = (state, action) => {
@@ -24,5 +25,7 @@ export const reducer = (state, action) => {
       return { ...state, objectType: action.value };
     case "SET_SITENAME":
       return { ...state, siteName: action.value };
+    case "SET_LOCALE":
+      return { ...state, locale: action.value };
   }
 };

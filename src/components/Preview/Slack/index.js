@@ -12,7 +12,7 @@ function Slack({ title, description, imageUrl, siteName }) {
           <Link className="text-[#1264a3] font-bold" to="#">
             {title}
           </Link>
-          <p className="text-[##1D1C1D]">{description}</p>
+          <p className="text-[#1d1c1d]">{description}</p>
           <div className='max-w-[360px] h-full my-[5px]'>
             <img className="rounded-[8px]" src={imageUrl || defaultImage} />
           </div>

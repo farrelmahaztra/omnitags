@@ -3,7 +3,8 @@ import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
 
 function Complete({ state }) {
-  const { title, description, url, imageUrl, objectType, siteName } = state;
+  const { title, description, url, imageUrl, objectType, locale, siteName } =
+    state;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -72,13 +73,18 @@ function Complete({ state }) {
                 </span>
                 "&gt;
               </span>
+              <span className="block">
+                &lt;
+                <span className="text-red-500">meta</span> property="
+                <span className="text-blue-300">og:locale</span>" content="
+                <span className="text-blue-300">{locale}</span>
+                "&gt;
+              </span>
               <span className="block mb-10">
                 &lt;
                 <span className="text-red-500">meta</span> property="
                 <span className="text-blue-300">og:site_name</span>" content="
-                <span className="text-blue-300">
-                  {siteName || title}
-                </span>
+                <span className="text-blue-300">{siteName || title}</span>
                 "&gt;
               </span>
 
