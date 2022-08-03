@@ -3,9 +3,10 @@ import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
+import SelectInput from "../../../components/SelectInput";
 
 function Advanced({ state, dispatch }) {
-  const { title, description, url, imageUrl, charset } = state;
+  const { title, description, url, imageUrl, siteName } = state;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -14,15 +15,13 @@ function Advanced({ state, dispatch }) {
         <div className="flex flex-auto w-11/12 border border-slate-200">
           <div className="flex flex-col w-2/5 border-r p-6">
             <label className="block mb-5">
-              <span className="text-slate-800">Character set</span>
+              <span className="text-slate-800">Site name</span>
               <TextInput
-                onChange={(e) =>
-                  dispatch({
-                    type: "SET_CHARSET",
-                    value: e.target.value,
-                  })
-                }
-                value={charset || ""}
+                onChange={(e) => dispatch({
+                  type: "SET_SITENAME",
+                  value: e.target.value
+                })}
+                value={siteName || ""}
               />
             </label>
           </div>
@@ -32,6 +31,7 @@ function Advanced({ state, dispatch }) {
               description={description}
               url={url}
               imageUrl={imageUrl}
+              siteName={siteName}
             />
           </div>
         </div>

@@ -2,7 +2,7 @@ import Google from "./Google";
 import Twitter from "./Twitter";
 import Slack from "./Slack";
 
-function Preview({ title, description, url, imageUrl }) {
+function Preview({ title, description, url, imageUrl, siteName }) {
   return (
     <>
       <Google title={title} description={description} url={url} />
@@ -12,7 +12,12 @@ function Preview({ title, description, url, imageUrl }) {
         url={url}
         imageUrl={imageUrl}
       />
-      <Slack title={title} description={description} imageUrl={imageUrl} />
+      <Slack
+        title={title}
+        description={description}
+        imageUrl={imageUrl}
+        siteName={siteName}
+      />
     </>
   );
 }

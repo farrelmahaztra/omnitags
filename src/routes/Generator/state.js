@@ -1,10 +1,11 @@
 export const initialState = {
-  title: "OmniTags",
+  title: "OmniTags - Meta Tag Generator",
   description:
     "Meta tags can be a hassle — it's hard to keep track of which ones help or hurt your SEO ranking. Our tool makes sure your business's website serves up the right tags and unfurls perfectly on every platform.",
   url: "https://omnitags.io",
   imageUrl: "",
   objectType: "website",
+  siteName: "OmniTags"
 };
 
 export const reducer = (state, action) => {
@@ -21,5 +22,7 @@ export const reducer = (state, action) => {
       return { ...state, imageUrl: action.value };
     case "SET_OBJECT_TYPE":
       return { ...state, objectType: action.value };
+    case "SET_SITENAME":
+      return { ...state, siteName: action.value };
   }
 };

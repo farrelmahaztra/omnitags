@@ -6,7 +6,7 @@ import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
 
 function Basic({ state, dispatch }) {
-  const { title, description, url, imageUrl, objectType } = state;
+  const { title, description, url, imageUrl, objectType, siteName } = state;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -94,6 +94,7 @@ function Basic({ state, dispatch }) {
               description={description}
               url={url}
               imageUrl={imageUrl}
+              siteName={siteName}
             />
           </div>
         </div>

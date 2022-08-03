@@ -4,7 +4,7 @@ import Footer from "../../../components/Footer";
 import Preview from "../../../components/Preview";
 
 function Custom({ state, dispatch }) {
-  const { title, description, url, imageUrl } = state;
+  const { title, description, url, imageUrl, siteName } = state;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -18,6 +18,7 @@ function Custom({ state, dispatch }) {
               description={description}
               url={url}
               imageUrl={imageUrl}
+              siteName={siteName}
             />
           </div>
         </div>
