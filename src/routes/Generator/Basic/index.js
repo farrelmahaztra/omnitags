@@ -2,6 +2,7 @@ import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
 import Preview from "../../../components/Preview";
+import TextInput from "../../../components/TextInput";
 
 function Basic({ state, dispatch }) {
   const { title, description, url, imageUrl } = state;
@@ -14,10 +15,7 @@ function Basic({ state, dispatch }) {
           <div className="flex flex-col w-2/5 border-r p-6 max-h-[894px] overflow-y-scroll">
             <label className="block mb-5">
               <span className="text-slate-800">Title</span>
-              <input
-                type="text"
-                className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
-                placeholder=""
+              <TextInput
                 onChange={(e) =>
                   dispatch({
                     type: "SET_TITLE",
@@ -44,10 +42,7 @@ function Basic({ state, dispatch }) {
             </label>
             <label className="block mb-5">
               <span className="text-slate-800">Website URL</span>
-              <input
-                type="text"
-                className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
-                placeholder=""
+              <TextInput
                 onChange={(e) =>
                   dispatch({
                     type: "SET_URL",
@@ -59,10 +54,7 @@ function Basic({ state, dispatch }) {
             </label>
             <label className="block">
               <span className="text-slate-800">Image URL</span>
-              <input
-                type="text"
-                className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
-                placeholder=""
+              <TextInput
                 onChange={(e) =>
                   dispatch({
                     type: "SET_IMAGE_URL",
