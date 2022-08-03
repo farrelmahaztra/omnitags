@@ -14,7 +14,7 @@ function Advanced({ state, dispatch }) {
         <Sidebar activeTab={"advanced"} />
         <div className="flex flex-auto w-11/12 border border-slate-200">
           <div className="flex flex-col w-2/5 border-r p-6">
-            <label className="block">
+            <label className="block mb-5">
               <span className="text-slate-800">Site name</span>
               <TextInput
                 onChange={(e) =>
@@ -26,7 +26,7 @@ function Advanced({ state, dispatch }) {
                 value={siteName || ""}
               />
             </label>
-            <label className="block mb-5">
+            <label className="block">
               <span className="text-slate-800">Locale</span>
               <SelectInput
                 onChange={(e) =>
