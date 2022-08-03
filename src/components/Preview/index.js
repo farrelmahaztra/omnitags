@@ -1,5 +1,6 @@
 import Google from "./Google";
 import Twitter from "./Twitter";
+import Instagram from "./Instagram";
 import Slack from "./Slack";
 
 function Preview({ title, description, url, imageUrl, siteName }) {
@@ -7,6 +8,12 @@ function Preview({ title, description, url, imageUrl, siteName }) {
     <>
       <Google title={title} description={description} url={url} />
       <Twitter
+        title={title}
+        description={description}
+        url={url}
+        imageUrl={imageUrl}
+      />
+      <Instagram
         title={title}
         description={description}
         url={url}
