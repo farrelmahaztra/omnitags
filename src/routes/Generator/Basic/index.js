@@ -3,9 +3,10 @@ import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
+import SelectInput from "../../../components/SelectInput";
 
 function Basic({ state, dispatch }) {
-  const { title, description, url, imageUrl } = state;
+  const { title, description, url, imageUrl, objectType } = state;
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -52,7 +53,7 @@ function Basic({ state, dispatch }) {
                 value={url || ""}
               />
             </label>
-            <label className="block">
+            <label className="block mb-5">
               <span className="text-slate-800">Image URL</span>
               <TextInput
                 onChange={(e) =>
@@ -62,6 +63,28 @@ function Basic({ state, dispatch }) {
                   })
                 }
                 value={imageUrl || ""}
+              />
+            </label>
+            <label className="block">
+              <span className="text-slate-800">Object Type</span>
+              <SelectInput
+                onChange={(e) =>
+                  dispatch({
+                    type: "SET_OBJECT_TYPE",
+                    value: e.target.value,
+                  })
+                }
+                value={objectType || ""}
+                options={[
+                  {
+                    label: "Website",
+                    value: "website",
+                  },
+                  {
+                    label: "Article",
+                    value: "article",
+                  },
+                ]}
               />
             </label>
           </div>
