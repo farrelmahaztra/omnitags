@@ -23,14 +23,19 @@ function Complete({ state }) {
 <meta name="title" content="${title}">
 <meta name="description" content="${description}">
 
-<meta property="og:type" content="${objectType}">
-${
-  objectType === "article" && ([
-    publishedTime && `<meta property="article:published_time" content="${publishedTime}">`,
-    modifiedTime && `<meta property="article:modified_time" content="${modifiedTime}">`,
-    expirationTime && `<meta property="article:expiration_time" content="${expirationTime}">`
-  ].join("\n"))
-}
+<meta property="og:type" content="${objectType}">${
+        objectType === "article" &&
+        publishedTime &&
+        `\n<meta property="article:published_time" content="${publishedTime}">`
+      }${
+        objectType === "article" &&
+        modifiedTime &&
+        `\n<meta property="article:modified_time" content="${modifiedTime}">`
+      }${
+        objectType === "article" &&
+        expirationTime &&
+        `\n<meta property="article:expiration_time" content="${expirationTime}">`
+      }
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
