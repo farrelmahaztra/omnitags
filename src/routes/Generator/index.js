@@ -22,11 +22,11 @@ function Generator() {
         replace
         element={<Advanced state={state} dispatch={dispatch} />}
       />
-      <Route
+      {/* <Route
         path="custom"
         replace
         element={<Custom state={state} dispatch={dispatch} />}
-      />
+      /> */}
        <Route
         path="complete"
         replace

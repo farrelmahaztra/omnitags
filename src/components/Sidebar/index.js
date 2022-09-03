@@ -12,21 +12,21 @@ function Sidebar({ activeTab }) {
         Basic
       </Link>
       <Link
-        className={`mb-3 p-2 rounded-lg text-slate-600 hover:bg-slate-100 ${
+        className={`mb-6 p-2 rounded-lg text-slate-600 hover:bg-slate-100 ${
           activeTab === "advanced" && "bg-slate-100"
         }`}
         to="../advanced"
       >
         Advanced
       </Link>
-      <Link
+      {/* <Link
         className={`mb-6 p-2 rounded-lg text-slate-600 hover:bg-slate-100 ${
           activeTab === "custom" && "bg-slate-100"
         }`}
         to="../custom"
       >
         Custom
-      </Link>
+      </Link> */}
       <Link
         className="p-2 rounded-lg text-white bg-blue-500 hover:bg-blue-400 text-center"
         to="../complete"
