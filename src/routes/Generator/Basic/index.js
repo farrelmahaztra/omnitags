@@ -4,6 +4,7 @@ import Footer from "../../../components/Footer";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
+import ogTypes from "./ogtypes.json";
 
 function Basic({ state, dispatch }) {
   const { title, description, url, imageUrl, objectType, siteName } = state;
@@ -75,16 +76,7 @@ function Basic({ state, dispatch }) {
                   })
                 }
                 value={objectType || ""}
-                options={[
-                  {
-                    label: "Website",
-                    value: "website",
-                  },
-                  {
-                    label: "Article",
-                    value: "article",
-                  },
-                ]}
+                options={ogTypes}
               />
             </label>
           </div>

@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Website",
+    "value": "website"
+  },
+  {
+    "label": "Article",
+    "value": "article"
+  },
+  {
+    "label": "Profile",
+    "value": "profile"
+  },
+  {
+    "label": "Book",
+    "value": "book"
+  },
+  {
+    "label": "Video",
+    "value": "video"
+  },
+  {
+    "label": "Music",
+    "value": "music"
+  }
+]
