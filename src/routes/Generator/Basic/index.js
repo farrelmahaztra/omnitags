@@ -1,3 +1,4 @@
+import ReactTooltip from "react-tooltip";
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
@@ -16,7 +17,7 @@ function Basic({ state, dispatch }) {
         <div className="flex flex-auto flex-col md:flex-row md:w-11/12 border border-slate-200 overflow-hidden">
           <div className="flex flex-col md:w-2/5 border-r p-6 max-h-[958px] overflow-y-scroll">
             <label className="block mb-5">
-              <span className="text-slate-800">Title</span>
+              <span className="text-slate-800" data-tip="Defines the document's title, shown in the browser tab and almost always shown in search results and link unfurls">Title</span>
               <TextInput
                 onChange={(e) =>
                   dispatch({
@@ -28,7 +29,7 @@ function Basic({ state, dispatch }) {
               />
             </label>
             <label className="block mb-5">
-              <span className="text-slate-800">Description</span>
+              <span className="text-slate-800" data-tip="Defines the document's description, snippets of which are often used in search results or link unfurls">Description</span>
               <textarea
                 className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
                 placeholder=""
@@ -43,7 +44,7 @@ function Basic({ state, dispatch }) {
               />
             </label>
             <label className="block mb-5">
-              <span className="text-slate-800">Website URL</span>
+              <span className="text-slate-800" data-tip="Defines the document's URL, sometimes used in search results or link unfurls">Website URL</span>
               <TextInput
                 onChange={(e) =>
                   dispatch({
@@ -55,7 +56,7 @@ function Basic({ state, dispatch }) {
               />
             </label>
             <label className="block mb-5">
-              <span className="text-slate-800">Image URL</span>
+              <span className="text-slate-800" data-tip="Defines the document's primary image URL, sometimes used in link unfurls">Image URL</span>
               <TextInput
                 onChange={(e) =>
                   dispatch({
@@ -67,7 +68,7 @@ function Basic({ state, dispatch }) {
               />
             </label>
             <label className="block">
-              <span className="text-slate-800">Object Type</span>
+              <span className="text-slate-800" data-tip="Defines the document's object type as per OpenGraph specifications">Object Type</span>
               <SelectInput
                 onChange={(e) =>
                   dispatch({
@@ -91,6 +92,7 @@ function Basic({ state, dispatch }) {
           </div>
         </div>
       </div>
+      <ReactTooltip />
       {/* <Footer back="/" next="../advanced" progress={0} /> */}
     </div>
   );

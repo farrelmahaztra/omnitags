@@ -1,3 +1,4 @@
+import ReactTooltip from "react-tooltip";
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
@@ -33,7 +34,7 @@ function Advanced({ state, dispatch }) {
         <div className="flex flex-auto flex-col md:flex-row md:w-11/12 border border-slate-200">
           <div className="flex flex-col md:w-2/5 border-r p-6">
             <label className="block mb-5">
-              <span className="text-slate-800">Site name</span>
+              <span className="text-slate-800" data-tip="Defines the site name for the document, sometimes used in link unfurls">Site name</span>
               <TextInput
                 onChange={(e) =>
                   dispatch({
@@ -45,7 +46,7 @@ function Advanced({ state, dispatch }) {
               />
             </label>
             <label className="block mb-5">
-              <span className="text-slate-800">Locale</span>
+              <span className="text-slate-800" data-tip="Defines the primary language of the document">Locale</span>
               <SelectInput
                 onChange={(e) =>
                   dispatch({
@@ -60,7 +61,7 @@ function Advanced({ state, dispatch }) {
             {objectType === "article" && (
               <>
                 <label className="block mb-5">
-                  <span className="text-slate-800">Published Time</span>
+                  <span className="text-slate-800" data-tip="Defines when the article was published (for OpenGraph)">Published Time</span>
                   <DateInput
                     onChange={(e) =>
                       dispatch({
@@ -72,7 +73,7 @@ function Advanced({ state, dispatch }) {
                   />
                 </label>
                 <label className="block mb-5">
-                  <span className="text-slate-800">Modified Time</span>
+                  <span className="text-slate-800" data-tip="Defines when the article was last modified (for OpenGraph)">Modified Time</span>
                   <DateInput
                     onChange={(e) =>
                       dispatch({
@@ -84,7 +85,7 @@ function Advanced({ state, dispatch }) {
                   />
                 </label>
                 <label className="block mb-5">
-                  <span className="text-slate-800">Expiration Time</span>
+                  <span className="text-slate-800" data-tip="Defines when the article goes out of date (for OpenGraph)">Expiration Time</span>
                   <DateInput
                     onChange={(e) =>
                       dispatch({
@@ -100,7 +101,7 @@ function Advanced({ state, dispatch }) {
             {objectType === "profile" && (
               <>
                 <label className="block mb-5">
-                  <span className="text-slate-800">Profile First Name</span>
+                  <span className="text-slate-800" data-tip="Defines the first name of the user (for OpenGraph)">Profile First Name</span>
                   <TextInput
                     onChange={(e) =>
                       dispatch({
@@ -112,7 +113,7 @@ function Advanced({ state, dispatch }) {
                   />
                 </label>
                 <label className="block mb-5">
-                  <span className="text-slate-800">Profile Last Name</span>
+                  <span className="text-slate-800" data-tip="Defines the last name of the user (for OpenGraph)">Profile Last Name</span>
                   <TextInput
                     onChange={(e) =>
                       dispatch({
@@ -124,7 +125,7 @@ function Advanced({ state, dispatch }) {
                   />
                 </label>
                 <label className="block mb-5">
-                  <span className="text-slate-800">Profile Username</span>
+                  <span className="text-slate-800" data-tip="Defines the user's username (for OpenGraph)">Profile Username</span>
                   <TextInput
                     onChange={(e) =>
                       dispatch({
@@ -136,7 +137,7 @@ function Advanced({ state, dispatch }) {
                   />
                 </label>
                 <label className="block mb-5">
-                  <span className="text-slate-800">Profile Gender</span>
+                  <span className="text-slate-800" data-tip="Defines the user's gender (for OpenGraph)">Profile Gender</span>
                   <SelectInput
                     onChange={(e) =>
                       dispatch({
@@ -171,6 +172,7 @@ function Advanced({ state, dispatch }) {
           </div>
         </div>
       </div>
+      <ReactTooltip />
       {/* <Footer back="../basic" next="../custom" progress={100 / 3} /> */}
     </div>
   );
