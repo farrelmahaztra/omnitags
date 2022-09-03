@@ -3,8 +3,50 @@ import Sidebar from "../../../components/Sidebar";
 import Footer from "../../../components/Footer";
 
 function Complete({ state }) {
-  const { title, description, url, imageUrl, objectType, locale, siteName } =
-    state;
+  const {
+    title,
+    description,
+    url,
+    imageUrl,
+    objectType,
+    locale,
+    siteName,
+    publishedTime,
+    modifiedTime,
+    expirationTime,
+  } = state;
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(
+      `<meta charset="utf-8">
+<title>${title}</title>
+<meta name="title" content="${title}">
+<meta name="description" content="${description}">
+
+<meta property="og:type" content="${objectType}">
+${
+  objectType === "article" && ([
+    publishedTime && `<meta property="article:published_time" content="${publishedTime}">`,
+    modifiedTime && `<meta property="article:modified_time" content="${modifiedTime}">`,
+    expirationTime && `<meta property="article:expiration_time" content="${expirationTime}">`
+  ].join("\n"))
+}
+<meta property="og:url" content="${url}">
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${description}">
+<meta property="og:image" content="${imageUrl || "ADD YOUR IMAGE URL HERE"}">
+
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="${url}">
+<meta property="twitter:title" content="${title}">
+<meta property="twitter:description" content="${description}">
+<meta property="twitter:image" content="${
+        imageUrl || "ADD YOUR IMAGE URL HERE"
+      }">
+`
+    );
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -46,6 +88,45 @@ function Complete({ state }) {
                 <span className="text-blue-300">og:type</span>" content="
                 <span className="text-blue-300">{objectType}</span>"&gt;
               </span>
+              {objectType === "article" && (
+                <>
+                  {publishedTime && (
+                    <span className="block">
+                      &lt;
+                      <span className="text-red-500">meta</span> property="
+                      <span className="text-blue-300">
+                        article:published_time
+                      </span>
+                      " content="
+                      <span className="text-blue-300">{publishedTime}</span>
+                      "&gt;
+                    </span>
+                  )}
+                  {modifiedTime && (
+                    <span className="block">
+                      &lt;
+                      <span className="text-red-500">meta</span> property="
+                      <span className="text-blue-300">
+                        article:modified_time
+                      </span>
+                      " content="
+                      <span className="text-blue-300">{modifiedTime}</span>"&gt;
+                    </span>
+                  )}
+                  {expirationTime && (
+                    <span className="block">
+                      &lt;
+                      <span className="text-red-500">meta</span> property="
+                      <span className="text-blue-300">
+                        article:expiration_time
+                      </span>
+                      " content="
+                      <span className="text-blue-300">{expirationTime}</span>
+                      "&gt;
+                    </span>
+                  )}
+                </>
+              )}
               <span className="block">
                 &lt;
                 <span className="text-red-500">meta</span> property="
@@ -125,13 +206,7 @@ function Complete({ state }) {
               <button
                 className="absolute bottom-6 right-6 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400"
                 onClick={() => {
-                  navigator.clipboard.writeText(
-                    `<meta charset="utf-8">\n<title>${title}</title>\n<meta name="title" content="${title}">\n<meta name="description" content="${description}">\n\n<meta property="og:type" content="${objectType}">\n<meta property="og:url" content="${url}">\n<meta property="og:title" content="${title}">\n<meta property="og:description" content="${description}">\n<meta property="og:image" content="${
-                      imageUrl || "ADD YOUR IMAGE URL HERE"
-                    }">\n\n<meta property="twitter:card" content="summary_large_image">\n<meta property="twitter:url" content="${url}">\n<meta property="twitter:title" content="${title}">\n<meta property="twitter:description" content="${description}">\n<meta property="twitter:image" content="${
-                      imageUrl || "ADD YOUR IMAGE URL HERE"
-                    }">\n`
-                  );
+                  copyToClipboard();
                   alert("Copied!");
                 }}
               >

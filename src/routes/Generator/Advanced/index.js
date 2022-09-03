@@ -76,7 +76,7 @@ function Advanced({ state, dispatch }) {
                         value: e.target.value,
                       })
                     }
-                    value={modifiedTime || ""}
+                    value={modifiedTime || null}
                   />
                 </label>
                 <label className="block mb-5">
@@ -88,7 +88,7 @@ function Advanced({ state, dispatch }) {
                         value: e.target.value,
                       })
                     }
-                    value={expirationTime || ""}
+                    value={expirationTime || null}
                   />
                 </label>
               </>

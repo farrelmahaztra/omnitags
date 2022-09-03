@@ -31,10 +31,10 @@ export const reducer = (state, action) => {
     case "SET_LOCALE":
       return { ...state, locale: action.value };
     case "SET_PUBLISHED_TIME":
-      return { ...state, locale: action.value };
+      return { ...state, publishedTime: action.value };
     case "SET_MODIFIED_TIME":
-      return { ...state, locale: action.value };
+      return { ...state, modifiedTime: action.value };
     case "SET_EXPIRATION_TIME":
-      return { ...state, locale: action.value };
+      return { ...state, expirationTime: action.value };
   }
 };
