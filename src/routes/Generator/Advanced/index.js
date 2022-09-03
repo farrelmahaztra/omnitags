@@ -19,6 +19,10 @@ function Advanced({ state, dispatch }) {
     publishedTime,
     modifiedTime,
     expirationTime,
+    profileFirstName,
+    profileLastName,
+    profileUsername,
+    profileGender,
   } = state;
 
   return (
@@ -89,6 +93,68 @@ function Advanced({ state, dispatch }) {
                       })
                     }
                     value={expirationTime || null}
+                  />
+                </label>
+              </>
+            )}
+            {objectType === "profile" && (
+              <>
+                <label className="block mb-5">
+                  <span className="text-slate-800">Profile First Name</span>
+                  <TextInput
+                    onChange={(e) =>
+                      dispatch({
+                        type: "SET_PROFILE_FIRST_NAME",
+                        value: e.target.value,
+                      })
+                    }
+                    value={profileFirstName || ""}
+                  />
+                </label>
+                <label className="block mb-5">
+                  <span className="text-slate-800">Profile Last Name</span>
+                  <TextInput
+                    onChange={(e) =>
+                      dispatch({
+                        type: "SET_PROFILE_LAST_NAME",
+                        value: e.target.value,
+                      })
+                    }
+                    value={profileLastName || ""}
+                  />
+                </label>
+                <label className="block mb-5">
+                  <span className="text-slate-800">Profile Username</span>
+                  <TextInput
+                    onChange={(e) =>
+                      dispatch({
+                        type: "SET_PROFILE_USERNAME",
+                        value: e.target.value,
+                      })
+                    }
+                    value={profileUsername || ""}
+                  />
+                </label>
+                <label className="block mb-5">
+                  <span className="text-slate-800">Profile Gender</span>
+                  <SelectInput
+                    onChange={(e) =>
+                      dispatch({
+                        type: "SET_PROFILE_GENDER",
+                        value: e.target.value,
+                      })
+                    }
+                    value={profileGender || ""}
+                    options={[
+                      {
+                        value: "male",
+                        label: "Male",
+                      },
+                      {
+                        value: "female",
+                        label: "Female",
+                      },
+                    ]}
                   />
                 </label>
               </>

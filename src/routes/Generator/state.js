@@ -10,6 +10,10 @@ export const initialState = {
   publishedTime: "",
   modifiedTime: "",
   expirationTime: "",
+  profileFirstName: "",
+  profileLastName: "",
+  profileUsername: "",
+  profileGender: "",
 };
 
 export const reducer = (state, action) => {
@@ -36,5 +40,13 @@ export const reducer = (state, action) => {
       return { ...state, modifiedTime: action.value };
     case "SET_EXPIRATION_TIME":
       return { ...state, expirationTime: action.value };
+    case "SET_PROFILE_FIRST_NAME":
+      return { ...state, profileFirstName: action.value };
+    case "SET_PROFILE_LAST_NAME":
+      return { ...state, profileLastName: action.value };
+    case "SET_PROFILE_USERNAME":
+      return { ...state, profileUsername: action.value };
+    case "SET_PROFILE_GENDER":
+      return { ...state, profileGender: action.value };
   }
 };
