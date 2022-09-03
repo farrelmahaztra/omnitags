@@ -28,7 +28,7 @@ function Advanced({ state, dispatch }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="flex flex-auto pb-16">
+      <div className="flex flex-auto">
         <Sidebar activeTab={"advanced"} />
         <div className="flex flex-auto w-11/12 border border-slate-200">
           <div className="flex flex-col w-2/5 border-r p-6">
@@ -160,7 +160,7 @@ function Advanced({ state, dispatch }) {
               </>
             )}
           </div>
-          <div className="flex flex-col w-3/5 p-6 max-h-[894px] overflow-y-scroll">
+          <div className="flex flex-col w-3/5 p-6 max-h-[958px] overflow-y-scroll">
             <Preview
               title={title}
               description={description}
@@ -171,7 +171,7 @@ function Advanced({ state, dispatch }) {
           </div>
         </div>
       </div>
-      <Footer back="../basic" next="../custom" progress={100 / 3} />
+      {/* <Footer back="../basic" next="../custom" progress={100 / 3} /> */}
     </div>
   );
 }

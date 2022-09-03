@@ -82,7 +82,7 @@ function Complete({ state }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="flex flex-auto pb-16">
+      <div className="flex flex-auto">
         <Sidebar activeTab={""} />
         <div className="flex flex-auto w-11/12 border border-slate-200">
           <div className="flex flex-col w-full p-6">
@@ -292,7 +292,7 @@ function Complete({ state }) {
           </div>
         </div>
       </div>
-      <Footer back="../custom" progress={100} />
+      {/* <Footer back="../custom" progress={100} /> */}
     </div>
   );
 }
