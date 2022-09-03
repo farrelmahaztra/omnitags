@@ -14,6 +14,10 @@ function Complete({ state }) {
     publishedTime,
     modifiedTime,
     expirationTime,
+    profileFirstName,
+    profileLastName,
+    profileUsername,
+    profileGender,
   } = state;
 
   const copyToClipboard = () => {
@@ -24,17 +28,40 @@ function Complete({ state }) {
 <meta name="description" content="${description}">
 
 <meta property="og:type" content="${objectType}">${
-        objectType === "article" &&
-        publishedTime &&
-        `\n<meta property="article:published_time" content="${publishedTime}">`
+        (objectType === "article" &&
+          publishedTime &&
+          `\n<meta property="article:published_time" content="${publishedTime}">`) ||
+        ""
       }${
-        objectType === "article" &&
-        modifiedTime &&
-        `\n<meta property="article:modified_time" content="${modifiedTime}">`
+        (objectType === "article" &&
+          modifiedTime &&
+          `\n<meta property="article:modified_time" content="${modifiedTime}">`) ||
+        ""
       }${
-        objectType === "article" &&
-        expirationTime &&
-        `\n<meta property="article:expiration_time" content="${expirationTime}">`
+        (objectType === "article" &&
+          expirationTime &&
+          `\n<meta property="article:expiration_time" content="${expirationTime}">`) ||
+        ""
+      }${
+        (objectType === "profile" &&
+          profileFirstName &&
+          `\n<meta property="profile:first_name" content="${profileFirstName}">`) ||
+        ""
+      }${
+        (objectType === "profile" &&
+          profileLastName &&
+          `\n<meta property="profile:last_name" content="${profileLastName}">`) ||
+        ""
+      }${
+        (objectType === "profile" &&
+          profileUsername &&
+          `\n<meta property="profile:username" content="${profileUsername}">`) ||
+        ""
+      }${
+        (objectType === "profile" &&
+          profileGender &&
+          `\n<meta property="profile:gender" content="${profileGender}">`) ||
+        ""
       }
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${title}">
@@ -127,6 +154,50 @@ function Complete({ state }) {
                       </span>
                       " content="
                       <span className="text-blue-300">{expirationTime}</span>
+                      "&gt;
+                    </span>
+                  )}
+                </>
+              )}
+              {objectType === "profile" && (
+                <>
+                  {profileFirstName && (
+                    <span className="block">
+                      &lt;
+                      <span className="text-red-500">meta</span> property="
+                      <span className="text-blue-300">profile:first_name</span>"
+                      content="
+                      <span className="text-blue-300">{profileFirstName}</span>
+                      "&gt;
+                    </span>
+                  )}
+                  {profileLastName && (
+                    <span className="block">
+                      &lt;
+                      <span className="text-red-500">meta</span> property="
+                      <span className="text-blue-300">profile:last_name</span>"
+                      content="
+                      <span className="text-blue-300">{profileLastName}</span>
+                      "&gt;
+                    </span>
+                  )}
+                  {profileUsername && (
+                    <span className="block">
+                      &lt;
+                      <span className="text-red-500">meta</span> property="
+                      <span className="text-blue-300">profile:username</span>"
+                      content="
+                      <span className="text-blue-300">{profileUsername}</span>
+                      "&gt;
+                    </span>
+                  )}
+                  {profileGender && (
+                    <span className="block">
+                      &lt;
+                      <span className="text-red-500">meta</span> property="
+                      <span className="text-blue-300">profile:gender</span>"
+                      content="
+                      <span className="text-blue-300">{profileGender}</span>
                       "&gt;
                     </span>
                   )}

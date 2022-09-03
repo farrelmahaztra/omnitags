@@ -13,7 +13,7 @@ export const initialState = {
   profileFirstName: "",
   profileLastName: "",
   profileUsername: "",
-  profileGender: "",
+  profileGender: "male",
 };
 
 export const reducer = (state, action) => {
