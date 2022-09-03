@@ -16,18 +16,13 @@ function Header() {
           >
             About
           </Link>
-          <Link
+          <a
             className="p-2 rounded-lg text-slate-600 hover:bg-slate-100"
-            to="/contact"
+            href="https://farrelmahaztra.com"
+            target="_blank"
           >
             Contact
-          </Link>
-          <Link
-            className="p-2 rounded-lg text-slate-600 hover:bg-slate-100"
-            to="/donate"
-          >
-            Donate
-          </Link>
+          </a>
         </div>
       </nav>
     </header>
