@@ -4,10 +4,23 @@ import Footer from "../../../components/Footer";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
+import DateInput from "../../../components/DateInput";
 import locales from "./locales.json";
 
 function Advanced({ state, dispatch }) {
-  const { title, description, url, imageUrl, siteName, locale } = state;
+  const {
+    title,
+    description,
+    url,
+    imageUrl,
+    siteName,
+    locale,
+    objectType,
+    publishedTime,
+    modifiedTime,
+    expirationTime,
+  } = state;
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -27,7 +40,7 @@ function Advanced({ state, dispatch }) {
                 value={siteName || ""}
               />
             </label>
-            <label className="block">
+            <label className="block mb-5">
               <span className="text-slate-800">Locale</span>
               <SelectInput
                 onChange={(e) =>
@@ -40,6 +53,46 @@ function Advanced({ state, dispatch }) {
                 options={locales}
               />
             </label>
+            {objectType === "article" && (
+              <>
+                <label className="block mb-5">
+                  <span className="text-slate-800">Published Time</span>
+                  <DateInput
+                    onChange={(e) =>
+                      dispatch({
+                        type: "SET_PUBLISHED_TIME",
+                        value: e.target.value,
+                      })
+                    }
+                    value={publishedTime || null}
+                  />
+                </label>
+                <label className="block mb-5">
+                  <span className="text-slate-800">Modified Time</span>
+                  <DateInput
+                    onChange={(e) =>
+                      dispatch({
+                        type: "SET_MODIFIED_TIME",
+                        value: e.target.value,
+                      })
+                    }
+                    value={modifiedTime || ""}
+                  />
+                </label>
+                <label className="block mb-5">
+                  <span className="text-slate-800">Expiration Time</span>
+                  <DateInput
+                    onChange={(e) =>
+                      dispatch({
+                        type: "SET_EXPIRATION_TIME",
+                        value: e.target.value,
+                      })
+                    }
+                    value={expirationTime || ""}
+                  />
+                </label>
+              </>
+            )}
           </div>
           <div className="flex flex-col w-3/5 p-6 max-h-[894px] overflow-y-scroll">
             <Preview

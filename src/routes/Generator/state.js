@@ -6,7 +6,10 @@ export const initialState = {
   imageUrl: "",
   objectType: "website",
   siteName: "OmniTags",
-  locale: "en_US"
+  locale: "en_US",
+  publishedTime: "",
+  modifiedTime: "",
+  expirationTime: "",
 };
 
 export const reducer = (state, action) => {
@@ -26,6 +29,12 @@ export const reducer = (state, action) => {
     case "SET_SITENAME":
       return { ...state, siteName: action.value };
     case "SET_LOCALE":
+      return { ...state, locale: action.value };
+    case "SET_PUBLISHED_TIME":
+      return { ...state, locale: action.value };
+    case "SET_MODIFIED_TIME":
+      return { ...state, locale: action.value };
+    case "SET_EXPIRATION_TIME":
       return { ...state, locale: action.value };
   }
 };
