@@ -4,6 +4,7 @@ import Footer from "../../../components/Footer";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
+import locales from "./locales.json";
 
 function Advanced({ state, dispatch }) {
   const { title, description, url, imageUrl, siteName, locale } = state;
@@ -36,20 +37,7 @@ function Advanced({ state, dispatch }) {
                   })
                 }
                 value={locale || ""}
-                options={[
-                  {
-                    label: "en_US",
-                    value: "en_US",
-                  },
-                  {
-                    label: "fr_FR",
-                    value: "fr_FR",
-                  },
-                  {
-                    label: "es_ES",
-                    value: "es_ES",
-                  },
-                ]}
+                options={locales}
               />
             </label>
           </div>
