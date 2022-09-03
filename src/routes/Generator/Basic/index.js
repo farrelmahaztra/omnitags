@@ -11,10 +11,10 @@ function Basic({ state, dispatch }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="flex flex-auto">
+      <div className="flex flex-auto flex-col md:flex-row">
         <Sidebar activeTab={"basic"} />
-        <div className="flex flex-auto w-11/12 border border-slate-200 overflow-hidden">
-          <div className="flex flex-col w-2/5 border-r p-6 max-h-[958px] overflow-y-scroll">
+        <div className="flex flex-auto flex-col md:flex-row md:w-11/12 border border-slate-200 overflow-hidden">
+          <div className="flex flex-col md:w-2/5 border-r p-6 max-h-[958px] overflow-y-scroll">
             <label className="block mb-5">
               <span className="text-slate-800">Title</span>
               <TextInput
@@ -80,7 +80,7 @@ function Basic({ state, dispatch }) {
               />
             </label>
           </div>
-          <div className="flex flex-col w-3/5 p-6 max-h-[958px] overflow-y-scroll">
+          <div className="flex flex-col md:w-3/5 p-6 max-h-[958px] overflow-y-scroll">
             <Preview
               title={title}
               description={description}

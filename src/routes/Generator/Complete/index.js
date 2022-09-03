@@ -82,9 +82,9 @@ function Complete({ state }) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="flex flex-auto">
+      <div className="flex flex-auto flex-col md:flex-row">
         <Sidebar activeTab={""} />
-        <div className="flex flex-auto w-11/12 border border-slate-200">
+        <div className="flex flex-auto flex-col md:flex-row md:w-11/12 border border-slate-200">
           <div className="flex flex-col w-full p-6">
             <code
               id="metatags"
