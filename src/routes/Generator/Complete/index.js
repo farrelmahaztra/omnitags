@@ -23,6 +23,7 @@ function Complete({ state }) {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(
       `<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${title}</title>
 <meta name="title" content="${title}">
 <meta name="description" content="${description}">
@@ -94,6 +95,12 @@ function Complete({ state }) {
                 &lt;
                 <span className="text-red-500">meta</span> charset="
                 <span className="text-blue-300">utf-8</span>"&gt;
+              </span>
+              <span className="block">
+                &lt;
+                <span className="text-red-500">meta</span> name="
+                <span className="text-blue-300">viewport</span>" content="
+                <span className="text-blue-300">width=device-width,initial-scale=1</span>"&gt;
               </span>
               <span className="block">
                 &lt;
