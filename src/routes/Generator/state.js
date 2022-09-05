@@ -6,6 +6,7 @@ export const initialState = {
   imageUrl: "",
   objectType: "website",
   siteName: "OmniTags",
+  themeColor: "#3b82f6",
   locale: "en_US",
   publishedTime: "",
   modifiedTime: "",
@@ -32,6 +33,8 @@ export const reducer = (state, action) => {
       return { ...state, objectType: action.value };
     case "SET_SITENAME":
       return { ...state, siteName: action.value };
+    case "SET_THEME_COLOR":
+      return { ...state, themeColor: action.value };
     case "SET_LOCALE":
       return { ...state, locale: action.value };
     case "SET_PUBLISHED_TIME":

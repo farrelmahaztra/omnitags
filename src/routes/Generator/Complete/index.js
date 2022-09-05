@@ -11,6 +11,7 @@ function Complete({ state }) {
     objectType,
     locale,
     siteName,
+    themeColor,
     publishedTime,
     modifiedTime,
     expirationTime,
@@ -24,6 +25,7 @@ function Complete({ state }) {
     navigator.clipboard.writeText(
       `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="${themeColor}">
 <title>${title}</title>
 <meta name="title" content="${title}">
 <meta name="robots" content="index, follow">
@@ -102,6 +104,12 @@ function Complete({ state }) {
                 <span className="text-red-500">meta</span> name="
                 <span className="text-blue-300">viewport</span>" content="
                 <span className="text-blue-300">width=device-width,initial-scale=1</span>"&gt;
+              </span>
+              <span className="block">
+                &lt;
+                <span className="text-red-500">meta</span> name="
+                <span className="text-blue-300">theme-color</span>" content="
+                <span className="text-blue-300">{themeColor || "#ffffff"}</span>"&gt;
               </span>
               <span className="block">
                 &lt;
