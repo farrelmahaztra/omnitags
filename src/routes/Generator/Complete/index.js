@@ -26,6 +26,7 @@ function Complete({ state }) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${title}</title>
 <meta name="title" content="${title}">
+<meta name="robots" content="index, follow">
 <meta name="description" content="${description}">
 
 <meta property="og:type" content="${objectType}">${
@@ -113,6 +114,12 @@ function Complete({ state }) {
                 <span className="text-red-500">meta</span> name="
                 <span className="text-blue-300">title</span>" content="
                 <span className="text-blue-300">{title}</span>"&gt;
+              </span>
+              <span className="block">
+                &lt;
+                <span className="text-red-500">meta</span> name="
+                <span className="text-blue-300">robots</span>" content="
+                <span className="text-blue-300">index, follow</span>"&gt;
               </span>
               <span className="block mb-10">
                 &lt;
