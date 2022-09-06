@@ -225,7 +225,7 @@ function Advanced({ state, dispatch }) {
               </>
             )}
           </div>
-          <div className="flex flex-col md:w-3/5 p-6 max-h-[958px] overflow-y-scroll">
+          <div className="flex flex-col md:w-3/5 p-6 md:max-h-[958px] md:overflow-y-scroll">
             <Preview
               title={title}
               description={description}
