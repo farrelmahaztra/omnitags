@@ -92,7 +92,7 @@ function Complete({ state }) {
           <div className="flex flex-col w-full p-6">
             <code
               id="metatags"
-              className="mt-1 font-mono relative w-full min-h-[70vh] p-6 rounded-lg text-slate-100 bg-slate-800 border-transparent focus:border-slate-900 focus:ring-0"
+              className="mt-1 font-mono relative w-full min-h-[100%] p-6 rounded-lg text-slate-100 bg-slate-800 border-transparent focus:border-slate-900 focus:ring-0"
             >
               <span className="block">
                 &lt;
@@ -103,13 +103,17 @@ function Complete({ state }) {
                 &lt;
                 <span className="text-red-500">meta</span> name="
                 <span className="text-blue-300">viewport</span>" content="
-                <span className="text-blue-300">width=device-width,initial-scale=1</span>"&gt;
+                <span className="text-blue-300">
+                  width=device-width,initial-scale=1
+                </span>
+                "&gt;
               </span>
               <span className="block">
                 &lt;
                 <span className="text-red-500">meta</span> name="
                 <span className="text-blue-300">theme-color</span>" content="
-                <span className="text-blue-300">{themeColor || "#ffffff"}</span>"&gt;
+                <span className="text-blue-300">{themeColor || "#ffffff"}</span>
+                "&gt;
               </span>
               <span className="block">
                 &lt;
@@ -302,7 +306,7 @@ function Complete({ state }) {
                 "&gt;
               </span>
               <button
-                className="absolute bottom-6 right-6 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400"
+                className="mt-8 float-right md:mt-0 md:absolute md:bottom-6 md:right-6 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400"
                 onClick={() => {
                   copyToClipboard();
                   alert("Copied!");
