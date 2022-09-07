@@ -7,7 +7,7 @@ function Sidebar({ activeTab }) {
         className={`mb-3 p-2 rounded-lg text-slate-600 hover:bg-slate-100 ${
           activeTab === "basic" && "bg-slate-100"
         }`}
-        to="../basic"
+        to="../"
       >
         Basic
       </Link>

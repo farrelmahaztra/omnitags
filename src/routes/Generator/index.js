@@ -11,12 +11,7 @@ function Generator() {
 
   return (
     <Routes>
-      <Route path="" element={<Navigate to="basic" />} />
-      <Route
-        path="basic"
-        replace
-        element={<Basic state={state} dispatch={dispatch} />}
-      />
+      <Route path="" element={<Basic state={state} dispatch={dispatch} />} />
       <Route
         path="advanced"
         replace
@@ -27,11 +22,7 @@ function Generator() {
         replace
         element={<Custom state={state} dispatch={dispatch} />}
       /> */}
-       <Route
-        path="complete"
-        replace
-        element={<Complete state={state} />}
-      />
+      <Route path="complete" replace element={<Complete state={state} />} />
     </Routes>
   );
 }
