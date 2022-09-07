@@ -23,6 +23,7 @@ function Generator() {
         element={<Custom state={state} dispatch={dispatch} />}
       /> */}
       <Route path="complete" replace element={<Complete state={state} />} />
+      <Route path="*" element={<Navigate to="" />} />
     </Routes>
   );
 }
