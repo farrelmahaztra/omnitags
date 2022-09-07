@@ -6,7 +6,7 @@ function About() {
       <Header />
       <div className="container p-12 flex flex-col flex-1">
         <h2 className="text-2xl sm:text-3xl md:text-4xl sm:w-2/3 md:w-3/4 my-8 font-title">
-          About OmniTags.io
+          About OmniTags.app
         </h2>
         <p className="text-lg mb-6 sm:w-3/4 lg:w-1/2 font-body text-slate-600">
           This website is a free metadata HTML tag generator that is meant to simplify
