@@ -19,14 +19,6 @@ function Sidebar({ activeTab }) {
       >
         Advanced
       </Link>
-      {/* <Link
-        className={`mb-6 p-2 rounded-lg text-slate-600 hover:bg-slate-100 ${
-          activeTab === "custom" && "bg-slate-100"
-        }`}
-        to="../custom"
-      >
-        Custom
-      </Link> */}
       <Link
         className="p-2 rounded-lg text-white bg-blue-500 hover:bg-blue-400 text-center"
         to="../complete"

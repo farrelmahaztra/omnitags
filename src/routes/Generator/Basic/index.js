@@ -1,7 +1,6 @@
 import ReactTooltip from "react-tooltip";
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
-import Footer from "../../../components/Footer";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
@@ -93,7 +92,6 @@ function Basic({ state, dispatch }) {
         </div>
       </div>
       <ReactTooltip />
-      {/* <Footer back="/" next="../advanced" progress={0} /> */}
     </div>
   );
 }

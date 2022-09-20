@@ -1,9 +1,8 @@
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
-import Footer from "../../../components/Footer";
 import Preview from "../../../components/Preview";
 
-function Custom({ state, dispatch }) {
+function Custom({ state }) {
   const { title, description, url, imageUrl, siteName } = state;
   return (
     <div className="min-h-screen flex flex-col">
@@ -23,7 +22,6 @@ function Custom({ state, dispatch }) {
           </div>
         </div>
       </div>
-      {/* <Footer back="../advanced" next="../complete" progress={(100 / 3) * 2} /> */}
     </div>
   );
 }
