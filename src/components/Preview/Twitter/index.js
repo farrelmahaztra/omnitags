@@ -8,7 +8,7 @@ function Twitter({ title, description, url, imageUrl }) {
         <img className="max-h-[264px] object-cover" src={imageUrl || defaultImage} />
         <div className="p-4">
           <p className="text-[16px] text-[#536471] mb-[5px] leading-[20px]">
-            {url ? url.replace(/(^\w+:|^)\/\//, "") : ""}
+            {url ? url.replace(/(^\w+:|^)\/\//, "").replace(/(\/.*)/, "") : ""}
           </p>
           <p className="text-[#0f1419] leading-[20px] mb-[5px]">{title}</p>
           <p className="text-[#506471] leading-[20px]">{description}</p>
