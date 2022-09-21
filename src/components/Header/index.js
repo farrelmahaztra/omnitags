@@ -19,7 +19,6 @@ function Header() {
           <a
             className="p-2 rounded-lg text-slate-600 hover:bg-slate-100"
             href="https://farrelmahaztra.com"
-            target="_blank"
           >
             Contact
           </a>

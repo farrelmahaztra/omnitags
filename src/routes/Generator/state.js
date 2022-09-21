@@ -51,5 +51,7 @@ export const reducer = (state, action) => {
       return { ...state, profileUsername: action.value };
     case "SET_PROFILE_GENDER":
       return { ...state, profileGender: action.value };
+    default:
+      return { ...state };
   }
 };

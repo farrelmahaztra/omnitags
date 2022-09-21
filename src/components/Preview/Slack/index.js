@@ -14,7 +14,7 @@ function Slack({ title, description, imageUrl, siteName }) {
           </Link>
           <p className="text-[#1d1c1d]">{description}</p>
           <div className='max-w-[360px] h-full my-[5px]'>
-            <img className="rounded-[8px]" src={imageUrl || defaultImage} />
+            <img className="rounded-[8px]" src={imageUrl || defaultImage} alt="Your Slack unfurl cover" />
           </div>
         </div>
       </div>
