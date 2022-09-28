@@ -9,12 +9,12 @@ import ogTypes from "./ogtypes.json";
 function Basic({ state, dispatch }) {
   const { title, description, url, imageUrl, objectType, siteName } = state;
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col">
       <Header />
-      <div className="flex flex-auto flex-col md:flex-row">
+      <div className="flex flex-auto flex-col md:flex-row md:max-h-[92vh]">
         <Sidebar activeTab={"basic"} />
         <div className="flex flex-auto flex-col md:flex-row md:w-11/12 border border-slate-200 overflow-hidden">
-          <div className="flex flex-col md:w-2/5 border-r p-6 max-h-[958px] overflow-y-scroll">
+          <div className="flex flex-col md:w-2/5 border-r p-6">
             <label className="block mb-5">
               <span className="text-slate-800" data-tip="Defines the document's title, shown in the browser tab and almost always shown in search results and link unfurls (recommended <=64 characters)">Title</span>
               <TextInput
@@ -80,7 +80,7 @@ function Basic({ state, dispatch }) {
               />
             </label>
           </div>
-          <div className="flex flex-col md:w-3/5 p-6 md:max-h-[958px] md:overflow-y-scroll">
+          <div className="flex flex-col md:w-3/5 p-6 md:overflow-y-scroll">
             <Preview
               title={title}
               description={description}

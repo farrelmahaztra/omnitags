@@ -28,9 +28,9 @@ function Advanced({ state, dispatch }) {
   } = state;
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col">
       <Header />
-      <div className="flex flex-auto flex-col md:flex-row">
+      <div className="flex flex-auto flex-col md:flex-row md:max-h-[92vh]">
         <Sidebar activeTab={"advanced"} />
         <div className="flex flex-auto flex-col md:flex-row md:w-11/12 border border-slate-200">
           <div className="flex flex-col md:w-2/5 border-r p-6">
@@ -224,7 +224,7 @@ function Advanced({ state, dispatch }) {
               </>
             )}
           </div>
-          <div className="flex flex-col md:w-3/5 p-6 md:max-h-[958px] md:overflow-y-scroll">
+          <div className="flex flex-col md:w-3/5 p-6 md:overflow-y-scroll">
             <Preview
               title={title}
               description={description}
