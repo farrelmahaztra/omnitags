@@ -1,4 +1,4 @@
-import ReactTooltip from "react-tooltip";
+//import ReactTooltip from "react-tooltip";
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import Preview from "../../../components/Preview";
@@ -91,7 +91,7 @@ function Basic({ state, dispatch }) {
           </div>
         </div>
       </div>
-      <ReactTooltip />
+      {/* <ReactTooltip /> */}
     </div>
   );
 }
