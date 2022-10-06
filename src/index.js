@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./index.css";
 import About from "./routes/About";
 import Generator from "./routes/Generator";
 import reportWebVitals from "./reportWebVitals";
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/*" element={<Generator />} />
-      <Route path="about" element={<About />} />
+      <Route path="*" element={<Generator />} />
+      <Route caseSensitive path="about" element={<About />} />
     </Routes>
   </BrowserRouter>
 );

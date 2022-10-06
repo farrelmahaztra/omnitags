@@ -12,11 +12,15 @@ function Generator() {
     <Routes>
       <Route path="" element={<Basic state={state} dispatch={dispatch} />} />
       <Route
+        caseSensitive
         path="advanced"
-        replace
         element={<Advanced state={state} dispatch={dispatch} />}
       />
-      <Route path="complete" replace element={<Complete state={state} />} />
+      <Route
+        caseSensitive
+        path="complete"
+        element={<Complete state={state} />}
+      />
       <Route path="*" element={<Navigate to="" />} />
     </Routes>
   );
