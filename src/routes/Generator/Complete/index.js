@@ -82,6 +82,46 @@ const Complete = ({ state }) => {
     );
   };
 
+  const TitleTag = ({ title }) => (
+    <span className="block">
+      &lt;
+      <span className="text-red-500">title</span>&gt;{title}&lt;/
+      <span className="text-red-500">title</span>&gt;
+    </span>
+  );
+
+  const MetaCharsetTag = () => (
+    <span className="block">
+      &lt;
+      <span className="text-red-500">meta</span> charset="
+      <span className="text-blue-300">utf-8</span>"&gt;
+    </span>
+  );
+
+  const MetaTag = ({ className = "block", name, property, content }) => {
+    return (
+      <span className={className}>
+        &lt;
+        <span className="text-red-500">meta</span>
+        {name && (
+          <>
+            {" "}
+            name="<span className="text-blue-300">{name}</span>"{" "}
+          </>
+        )}
+        {property && (
+          <>
+            {" "}
+            property="<span className="text-blue-300">{property}</span>"{" "}
+          </>
+        )}
+        content="
+        <span className="text-blue-300">{content}</span>
+        "&gt;
+      </span>
+    );
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -93,217 +133,95 @@ const Complete = ({ state }) => {
               id="metatags"
               className="mt-1 font-mono relative w-full min-h-[100%] p-6 rounded-lg text-slate-100 bg-slate-800 border-transparent focus:border-slate-900 focus:ring-0"
             >
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> charset="
-                <span className="text-blue-300">utf-8</span>"&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> name="
-                <span className="text-blue-300">viewport</span>" content="
-                <span className="text-blue-300">
-                  width=device-width,initial-scale=1
-                </span>
-                "&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> name="
-                <span className="text-blue-300">theme-color</span>" content="
-                <span className="text-blue-300">{themeColor || "#ffffff"}</span>
-                "&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">title</span>&gt;{title}&lt;/
-                <span className="text-red-500">title</span>&gt;
-              </span>
+              <MetaCharsetTag />
+              <MetaTag
+                name="viewport"
+                content="width=device-width,initial-scale=1"
+              />
+              <MetaTag name="theme-color" content={themeColor || "#ffffff"} />
+              <TitleTag title={title} />
+              <MetaTag name="title" content={title} />
+              <MetaTag name="robots" content="index, follow" />
+              <MetaTag
+                className="block mb-10"
+                name="description"
+                content={description}
+              />
 
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> name="
-                <span className="text-blue-300">title</span>" content="
-                <span className="text-blue-300">{title}</span>"&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> name="
-                <span className="text-blue-300">robots</span>" content="
-                <span className="text-blue-300">index, follow</span>"&gt;
-              </span>
-              <span className="block mb-10">
-                &lt;
-                <span className="text-red-500">meta</span> name="
-                <span className="text-blue-300">description</span>" content="
-                <span className="text-blue-300">{description}</span>"&gt;
-              </span>
-
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">og:type</span>" content="
-                <span className="text-blue-300">{objectType}</span>"&gt;
-              </span>
+              <MetaTag property="og:type" content={objectType} />
               {objectType === "article" && (
                 <>
                   {publishedTime && (
-                    <span className="block">
-                      &lt;
-                      <span className="text-red-500">meta</span> property="
-                      <span className="text-blue-300">
-                        article:published_time
-                      </span>
-                      " content="
-                      <span className="text-blue-300">{publishedTime}</span>
-                      "&gt;
-                    </span>
+                    <MetaTag
+                      property="article:published_time"
+                      content={publishedTime}
+                    />
                   )}
                   {modifiedTime && (
-                    <span className="block">
-                      &lt;
-                      <span className="text-red-500">meta</span> property="
-                      <span className="text-blue-300">
-                        article:modified_time
-                      </span>
-                      " content="
-                      <span className="text-blue-300">{modifiedTime}</span>"&gt;
-                    </span>
+                    <MetaTag
+                      property="article:modified_time"
+                      content={modifiedTime}
+                    />
                   )}
                   {expirationTime && (
-                    <span className="block">
-                      &lt;
-                      <span className="text-red-500">meta</span> property="
-                      <span className="text-blue-300">
-                        article:expiration_time
-                      </span>
-                      " content="
-                      <span className="text-blue-300">{expirationTime}</span>
-                      "&gt;
-                    </span>
+                    <MetaTag
+                      property="article:expiration_time"
+                      content={expirationTime}
+                    />
                   )}
                 </>
               )}
               {objectType === "profile" && (
                 <>
                   {profileFirstName && (
-                    <span className="block">
-                      &lt;
-                      <span className="text-red-500">meta</span> property="
-                      <span className="text-blue-300">profile:first_name</span>"
-                      content="
-                      <span className="text-blue-300">{profileFirstName}</span>
-                      "&gt;
-                    </span>
+                    <MetaTag
+                      property="profile:first_name"
+                      content={profileFirstName}
+                    />
                   )}
                   {profileLastName && (
-                    <span className="block">
-                      &lt;
-                      <span className="text-red-500">meta</span> property="
-                      <span className="text-blue-300">profile:last_name</span>"
-                      content="
-                      <span className="text-blue-300">{profileLastName}</span>
-                      "&gt;
-                    </span>
+                    <MetaTag
+                      property="profile:last_name"
+                      content={profileLastName}
+                    />
                   )}
                   {profileUsername && (
-                    <span className="block">
-                      &lt;
-                      <span className="text-red-500">meta</span> property="
-                      <span className="text-blue-300">profile:username</span>"
-                      content="
-                      <span className="text-blue-300">{profileUsername}</span>
-                      "&gt;
-                    </span>
+                    <MetaTag
+                      property="profile:username"
+                      content={profileUsername}
+                    />
                   )}
                   {profileGender && (
-                    <span className="block">
-                      &lt;
-                      <span className="text-red-500">meta</span> property="
-                      <span className="text-blue-300">profile:gender</span>"
-                      content="
-                      <span className="text-blue-300">{profileGender}</span>
-                      "&gt;
-                    </span>
+                    <MetaTag
+                      property="profile:gender"
+                      content={profileGender}
+                    />
                   )}
                 </>
               )}
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">og:url</span>" content="
-                <span className="text-blue-300">{url}</span>"&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">og:title</span>" content="
-                <span className="text-blue-300">{title}</span>"&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">og:description</span>" content="
-                <span className="text-blue-300">{description}</span>"&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">og:image</span>" content="
-                <span className="text-blue-300">
-                  {imageUrl || "ADD YOUR IMAGE URL HERE"}
-                </span>
-                "&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">og:locale</span>" content="
-                <span className="text-blue-300">{locale}</span>
-                "&gt;
-              </span>
-              <span className="block mb-10">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">og:site_name</span>" content="
-                <span className="text-blue-300">{siteName || title}</span>
-                "&gt;
-              </span>
+              <MetaTag property="og:url" content={url} />
+              <MetaTag property="og:title" content={title} />
+              <MetaTag property="og:description" content={description} />
+              <MetaTag
+                property="og:image"
+                content={imageUrl || "ADD YOUR IMAGE URL HERE"}
+              />
+              <MetaTag property="og:locale" content={locale} />
+              <MetaTag
+                className="block mb-10"
+                property="og:site_name"
+                content={siteName || title}
+              />
 
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">twitter:card</span>" content="
-                <span className="text-blue-300">summary_large_image</span>"&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">twitter:url</span>" content="
-                <span className="text-blue-300">{url}</span>"&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">twitter:title</span>" content="
-                <span className="text-blue-300">{title}</span>"&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">twitter:description</span>"
-                content="
-                <span className="text-blue-300">{description}</span>"&gt;
-              </span>
-              <span className="block">
-                &lt;
-                <span className="text-red-500">meta</span> property="
-                <span className="text-blue-300">twitter:image</span>" content="
-                <span className="text-blue-300">
-                  {imageUrl || "ADD YOUR IMAGE URL HERE"}
-                </span>
-                "&gt;
-              </span>
+              <MetaTag property="twitter:card" content="summary_large_image" />
+              <MetaTag property="twitter:url" content={url} />
+              <MetaTag property="twitter:title" content={title} />
+              <MetaTag property="twitter:description" content={description} />
+              <MetaTag
+                property="twitter:image"
+                content={imageUrl || "ADD YOUR IMAGE URL HERE"}
+              />
+
               <button
                 className="mt-8 float-right md:mt-0 md:absolute md:bottom-6 md:right-6 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400"
                 onClick={() => {
