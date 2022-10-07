@@ -70,6 +70,8 @@ const Complete = ({ state }) => {
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${description}">
 <meta property="og:image" content="${imageUrl || "ADD YOUR IMAGE URL HERE"}">
+<meta property="og:locale" content="${locale}">
+<meta property="og:site_name" content="${siteName || title}">
 
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="${url}">
