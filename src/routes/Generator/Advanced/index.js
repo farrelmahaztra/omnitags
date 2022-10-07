@@ -8,7 +8,7 @@ import DateInput from "../../../components/DateInput";
 import ColorInput from "../../../components/ColorInput";
 import locales from "./locales.json";
 
-function Advanced({ state, dispatch }) {
+const Advanced = ({ state, dispatch }) => {
   const {
     title,
     description,

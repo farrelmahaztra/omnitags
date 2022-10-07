@@ -1,7 +1,7 @@
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 
-function Complete({ state }) {
+const Complete = ({ state }) => {
   const {
     title,
     description,
@@ -319,6 +319,6 @@ function Complete({ state }) {
       </div>
     </div>
   );
-}
+};
 
 export default Complete;

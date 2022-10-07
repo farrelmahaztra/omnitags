@@ -2,7 +2,7 @@ import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import Preview from "../../../components/Preview";
 
-function Custom({ state }) {
+const Custom = ({ state }) => {
   const { title, description, url, imageUrl, siteName } = state;
   return (
     <div className="min-h-screen flex flex-col">
@@ -24,6 +24,6 @@ function Custom({ state }) {
       </div>
     </div>
   );
-}
+};
 
 export default Custom;

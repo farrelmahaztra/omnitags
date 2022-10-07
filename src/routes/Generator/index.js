@@ -5,7 +5,7 @@ import Advanced from "./Advanced";
 import Complete from "./Complete";
 import { initialState, reducer } from "./state";
 
-function Generator() {
+const Generator = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
@@ -24,6 +24,6 @@ function Generator() {
       <Route path="*" element={<Navigate to="" />} />
     </Routes>
   );
-}
+};
 
 export default Generator;
