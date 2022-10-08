@@ -1,8 +1,7 @@
-import Header from "../../components/Header";
+import Layout from "../../components/Layout";
 
 const About = () => (
-  <div className="min-h-screen">
-    <Header />
+  <Layout>
     <div className="container p-12 flex flex-col flex-1">
       <h2 className="text-2xl sm:text-3xl md:text-4xl sm:w-2/3 md:w-3/4 my-8 font-title">
         About OmniTags.app
@@ -57,7 +56,7 @@ const About = () => (
         .
       </p>
     </div>
-  </div>
+  </Layout>
 );
 
 export default About;
