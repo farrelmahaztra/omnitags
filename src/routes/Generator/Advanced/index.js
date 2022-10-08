@@ -1,4 +1,3 @@
-//import ReactTooltip from "react-tooltip";
 import Header from "../../../components/Header";
 import Sidebar from "../../../components/Sidebar";
 import Preview from "../../../components/Preview";
@@ -6,6 +5,7 @@ import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
 import DateInput from "../../../components/DateInput";
 import ColorInput from "../../../components/ColorInput";
+import FormItem from "../../../components/FormItem";
 import {
   handleSitename,
   handleThemeColor,
@@ -46,128 +46,98 @@ const Advanced = ({ state, dispatch }) => {
         <Sidebar activeTab={"advanced"} />
         <div className="flex flex-auto flex-col md:flex-row md:w-11/12 border border-slate-200">
           <div className="flex flex-col md:w-2/5 border-r p-6">
-            <label className="block mb-5">
-              <span
-                className="text-slate-800"
-                data-tip="Defines the site name for the document, sometimes used in link unfurls"
-              >
-                Site name
-              </span>
+            <FormItem
+              label="Site name"
+              tooltip="Defines the site name for the document, sometimes used in link unfurls"
+            >
               <TextInput
                 onChange={(e) => handleSitename(dispatch, e)}
                 value={siteName || ""}
               />
-            </label>
-            <label className="block mb-5">
-              <span
-                className="text-slate-800"
-                data-tip="Defines the theme color for the document, sometimes used to customize web browser UIs on the page."
-              >
-                Theme color
-              </span>
+            </FormItem>
+            <FormItem
+              label="Theme color"
+              data-tip="Defines the theme color for the document, sometimes used to customize web browser UIs on the page."
+            >
               <ColorInput
                 onChange={(e) => handleThemeColor(dispatch, e)}
                 value={themeColor || ""}
               />
-            </label>
-            <label className="block mb-5">
-              <span
-                className="text-slate-800"
-                data-tip="Defines the primary language of the document"
-              >
-                Locale
-              </span>
+            </FormItem>
+            <FormItem
+              label="Locale"
+              tooltip="Defines the primary language of the document"
+            >
               <SelectInput
                 onChange={(e) => handleLocale(dispatch, e)}
                 value={locale || ""}
                 options={locales}
               />
-            </label>
+            </FormItem>
             {objectType === "article" && (
               <>
-                <label className="block mb-5">
-                  <span
-                    className="text-slate-800"
-                    data-tip="Defines when the article was published (for OpenGraph)"
-                  >
-                    Published Time
-                  </span>
+                <FormItem
+                  label="Published time"
+                  tooltip="Defines when the article was published (for OpenGraph)"
+                >
                   <DateInput
                     onChange={(e) => handlePublishedTime(dispatch, e)}
                     value={publishedTime || null}
                   />
-                </label>
-                <label className="block mb-5">
-                  <span
-                    className="text-slate-800"
-                    data-tip="Defines when the article was last modified (for OpenGraph)"
-                  >
-                    Modified Time
-                  </span>
+                </FormItem>
+                <FormItem
+                  label="Modified time"
+                  tooltip="Defines when the article was last modified (for OpenGraph)"
+                >
                   <DateInput
                     onChange={(e) => handleModifiedTime(dispatch, e)}
                     value={modifiedTime || null}
                   />
-                </label>
-                <label className="block mb-5">
-                  <span
-                    className="text-slate-800"
-                    data-tip="Defines when the article goes out of date (for OpenGraph)"
-                  >
-                    Expiration Time
-                  </span>
+                </FormItem>
+                <FormItem
+                  label="Expiration time"
+                  tooltip="Defines when the article goes out of date (for OpenGraph)"
+                >
                   <DateInput
                     onChange={(e) => handleExpirationTime(dispatch, e)}
                     value={expirationTime || null}
                   />
-                </label>
+                </FormItem>
               </>
             )}
             {objectType === "profile" && (
               <>
-                <label className="block mb-5">
-                  <span
-                    className="text-slate-800"
-                    data-tip="Defines the first name of the user (for OpenGraph)"
-                  >
-                    Profile First Name
-                  </span>
+                <FormItem
+                  label="Profile first name"
+                  tooltip="Defines the first name of the user (for OpenGraph)"
+                >
                   <TextInput
                     onChange={(e) => handleProfileFirstName(dispatch, e)}
                     value={profileFirstName || ""}
                   />
-                </label>
-                <label className="block mb-5">
-                  <span
-                    className="text-slate-800"
-                    data-tip="Defines the last name of the user (for OpenGraph)"
-                  >
-                    Profile Last Name
-                  </span>
+                </FormItem>
+                <FormItem
+                  label="Profile last name"
+                  tooltip="Defines the last name of the user (for OpenGraph)"
+                >
                   <TextInput
                     onChange={(e) => handleProfileLastName(dispatch, e)}
                     value={profileLastName || ""}
                   />
-                </label>
-                <label className="block mb-5">
-                  <span
-                    className="text-slate-800"
-                    data-tip="Defines the user's username (for OpenGraph)"
-                  >
-                    Profile Username
-                  </span>
+                </FormItem>
+                <FormItem
+                  label="Profile username"
+                  tooltip="Defines the user's username (for OpenGraph)"
+                >
                   <TextInput
                     onChange={(e) => handleProfileUsername(dispatch, e)}
                     value={profileUsername || ""}
                   />
-                </label>
-                <label className="block mb-5">
-                  <span
-                    className="text-slate-800"
-                    data-tip="Defines the user's gender (for OpenGraph)"
-                  >
-                    Profile Gender
-                  </span>
+                </FormItem>
+                <FormItem
+                  label="Profile gender"
+                  tooltip="Defines the user's gender (for OpenGraph)"
+                >
                   <SelectInput
                     onChange={(e) => handleProfileGender(dispatch, e)}
                     value={profileGender || ""}
@@ -182,7 +152,7 @@ const Advanced = ({ state, dispatch }) => {
                       },
                     ]}
                   />
-                </label>
+                </FormItem>
               </>
             )}
           </div>
@@ -197,7 +167,6 @@ const Advanced = ({ state, dispatch }) => {
           </div>
         </div>
       </div>
-      {/* <ReactTooltip /> */}
     </div>
   );
 };
