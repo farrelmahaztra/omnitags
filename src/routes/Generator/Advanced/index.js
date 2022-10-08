@@ -6,6 +6,18 @@ import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
 import DateInput from "../../../components/DateInput";
 import ColorInput from "../../../components/ColorInput";
+import {
+  handleSitename,
+  handleThemeColor,
+  handleLocale,
+  handlePublishedTime,
+  handleModifiedTime,
+  handleExpirationTime,
+  handleProfileFirstName,
+  handleProfileLastName,
+  handleProfileUsername,
+  handleProfileGender,
+} from "./actions";
 import locales from "./locales.json";
 
 const Advanced = ({ state, dispatch }) => {
@@ -42,12 +54,7 @@ const Advanced = ({ state, dispatch }) => {
                 Site name
               </span>
               <TextInput
-                onChange={(e) =>
-                  dispatch({
-                    type: "SET_SITENAME",
-                    value: e.target.value,
-                  })
-                }
+                onChange={(e) => handleSitename(dispatch, e)}
                 value={siteName || ""}
               />
             </label>
@@ -59,12 +66,7 @@ const Advanced = ({ state, dispatch }) => {
                 Theme color
               </span>
               <ColorInput
-                onChange={(e) =>
-                  dispatch({
-                    type: "SET_THEME_COLOR",
-                    value: e.target.value,
-                  })
-                }
+                onChange={(e) => handleThemeColor(dispatch, e)}
                 value={themeColor || ""}
               />
             </label>
@@ -76,12 +78,7 @@ const Advanced = ({ state, dispatch }) => {
                 Locale
               </span>
               <SelectInput
-                onChange={(e) =>
-                  dispatch({
-                    type: "SET_LOCALE",
-                    value: e.target.value,
-                  })
-                }
+                onChange={(e) => handleLocale(dispatch, e)}
                 value={locale || ""}
                 options={locales}
               />
@@ -96,12 +93,7 @@ const Advanced = ({ state, dispatch }) => {
                     Published Time
                   </span>
                   <DateInput
-                    onChange={(e) =>
-                      dispatch({
-                        type: "SET_PUBLISHED_TIME",
-                        value: e.target.value,
-                      })
-                    }
+                    onChange={(e) => handlePublishedTime(dispatch, e)}
                     value={publishedTime || null}
                   />
                 </label>
@@ -113,12 +105,7 @@ const Advanced = ({ state, dispatch }) => {
                     Modified Time
                   </span>
                   <DateInput
-                    onChange={(e) =>
-                      dispatch({
-                        type: "SET_MODIFIED_TIME",
-                        value: e.target.value,
-                      })
-                    }
+                    onChange={(e) => handleModifiedTime(dispatch, e)}
                     value={modifiedTime || null}
                   />
                 </label>
@@ -130,12 +117,7 @@ const Advanced = ({ state, dispatch }) => {
                     Expiration Time
                   </span>
                   <DateInput
-                    onChange={(e) =>
-                      dispatch({
-                        type: "SET_EXPIRATION_TIME",
-                        value: e.target.value,
-                      })
-                    }
+                    onChange={(e) => handleExpirationTime(dispatch, e)}
                     value={expirationTime || null}
                   />
                 </label>
@@ -151,12 +133,7 @@ const Advanced = ({ state, dispatch }) => {
                     Profile First Name
                   </span>
                   <TextInput
-                    onChange={(e) =>
-                      dispatch({
-                        type: "SET_PROFILE_FIRST_NAME",
-                        value: e.target.value,
-                      })
-                    }
+                    onChange={(e) => handleProfileFirstName(dispatch, e)}
                     value={profileFirstName || ""}
                   />
                 </label>
@@ -168,12 +145,7 @@ const Advanced = ({ state, dispatch }) => {
                     Profile Last Name
                   </span>
                   <TextInput
-                    onChange={(e) =>
-                      dispatch({
-                        type: "SET_PROFILE_LAST_NAME",
-                        value: e.target.value,
-                      })
-                    }
+                    onChange={(e) => handleProfileLastName(dispatch, e)}
                     value={profileLastName || ""}
                   />
                 </label>
@@ -185,12 +157,7 @@ const Advanced = ({ state, dispatch }) => {
                     Profile Username
                   </span>
                   <TextInput
-                    onChange={(e) =>
-                      dispatch({
-                        type: "SET_PROFILE_USERNAME",
-                        value: e.target.value,
-                      })
-                    }
+                    onChange={(e) => handleProfileUsername(dispatch, e)}
                     value={profileUsername || ""}
                   />
                 </label>
@@ -202,12 +169,7 @@ const Advanced = ({ state, dispatch }) => {
                     Profile Gender
                   </span>
                   <SelectInput
-                    onChange={(e) =>
-                      dispatch({
-                        type: "SET_PROFILE_GENDER",
-                        value: e.target.value,
-                      })
-                    }
+                    onChange={(e) => handleProfileGender(dispatch, e)}
                     value={profileGender || ""}
                     options={[
                       {
@@ -238,6 +200,6 @@ const Advanced = ({ state, dispatch }) => {
       {/* <ReactTooltip /> */}
     </div>
   );
-}
+};
 
 export default Advanced;

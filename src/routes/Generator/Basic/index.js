@@ -4,10 +4,18 @@ import Sidebar from "../../../components/Sidebar";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
+import {
+  handleTitle,
+  handleDescription,
+  handleUrl,
+  handleImageUrl,
+  handleObjectType,
+} from "./actions";
 import ogTypes from "./ogtypes.json";
 
 const Basic = ({ state, dispatch }) => {
   const { title, description, url, imageUrl, objectType, siteName } = state;
+
   return (
     <div className="flex flex-col">
       <Header />
@@ -23,12 +31,7 @@ const Basic = ({ state, dispatch }) => {
                 Title
               </span>
               <TextInput
-                onChange={(e) =>
-                  dispatch({
-                    type: "SET_TITLE",
-                    value: e.target.value,
-                  })
-                }
+                onChange={(e) => handleTitle(dispatch, e)}
                 value={title || ""}
               />
             </label>
@@ -43,12 +46,7 @@ const Basic = ({ state, dispatch }) => {
                 className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
                 placeholder=""
                 rows="4"
-                onChange={(e) => {
-                  dispatch({
-                    type: "SET_DESCRIPTION",
-                    value: e.target.value,
-                  });
-                }}
+                onChange={(e) => handleDescription(dispatch, e)}
                 value={description || ""}
               />
             </label>
@@ -60,12 +58,7 @@ const Basic = ({ state, dispatch }) => {
                 Website URL
               </span>
               <TextInput
-                onChange={(e) =>
-                  dispatch({
-                    type: "SET_URL",
-                    value: e.target.value,
-                  })
-                }
+                onChange={(e) => handleUrl(dispatch, e)}
                 value={url || ""}
               />
             </label>
@@ -77,12 +70,7 @@ const Basic = ({ state, dispatch }) => {
                 Image URL
               </span>
               <TextInput
-                onChange={(e) =>
-                  dispatch({
-                    type: "SET_IMAGE_URL",
-                    value: e.target.value,
-                  })
-                }
+                onChange={(e) => handleImageUrl(dispatch, e)}
                 value={imageUrl || ""}
               />
             </label>
@@ -94,12 +82,7 @@ const Basic = ({ state, dispatch }) => {
                 Object Type
               </span>
               <SelectInput
-                onChange={(e) =>
-                  dispatch({
-                    type: "SET_OBJECT_TYPE",
-                    value: e.target.value,
-                  })
-                }
+                onChange={(e) => handleObjectType(dispatch, e)}
                 value={objectType || ""}
                 options={ogTypes}
               />
