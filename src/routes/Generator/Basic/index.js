@@ -3,17 +3,17 @@ import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
 import FormItem from "../../../components/FormItem";
-import {
-  handleTitle,
-  handleDescription,
-  handleUrl,
-  handleImageUrl,
-  handleObjectType,
-} from "./actions";
 import ogTypes from "./ogtypes.json";
 
 const Basic = ({ state, dispatch }) => {
   const { title, description, url, imageUrl, objectType, siteName } = state;
+
+  const handleInput = (event) => {
+    dispatch({
+      type: "UPDATE",
+      payload: { key: event.target.name, value: event.target.value },
+    });
+  };
 
   return (
     <Layout tab="basic" hasSidebar>
@@ -23,7 +23,8 @@ const Basic = ({ state, dispatch }) => {
           tooltip="Defines the document's title, shown in the browser tab and almost always shown in search results and link unfurls (recommended <=64 characters)"
         >
           <TextInput
-            onChange={(e) => handleTitle(dispatch, e)}
+            onChange={handleInput}
+            name="title"
             value={title || ""}
           />
         </FormItem>
@@ -35,7 +36,8 @@ const Basic = ({ state, dispatch }) => {
             className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
             placeholder=""
             rows="4"
-            onChange={(e) => handleDescription(dispatch, e)}
+            onChange={handleInput}
+            name="description"
             value={description || ""}
           />
         </FormItem>
@@ -44,7 +46,8 @@ const Basic = ({ state, dispatch }) => {
           tooltip="Defines the document's URL, sometimes used in search results or link unfurls"
         >
           <TextInput
-            onChange={(e) => handleUrl(dispatch, e)}
+            onChange={handleInput}
+            name="url"
             value={url || ""}
           />
         </FormItem>
@@ -53,7 +56,8 @@ const Basic = ({ state, dispatch }) => {
           tooltip="Defines the document's primary image URL, sometimes used in link unfurls"
         >
           <TextInput
-            onChange={(e) => handleImageUrl(dispatch, e)}
+            onChange={handleInput}
+            name="imageUrl"
             value={imageUrl || ""}
           />
         </FormItem>
@@ -62,7 +66,8 @@ const Basic = ({ state, dispatch }) => {
           tooltip="Defines the document's object type as per OpenGraph specifications"
         >
           <SelectInput
-            onChange={(e) => handleObjectType(dispatch, e)}
+            onChange={handleInput}
+            name="objectType"
             value={objectType || ""}
             options={ogTypes}
           />

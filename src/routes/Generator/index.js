@@ -3,7 +3,7 @@ import { Route, Navigate, Routes } from "react-router-dom";
 import Basic from "./Basic";
 import Advanced from "./Advanced";
 import Complete from "./Complete";
-import { initialState, reducer } from "./state";
+import { initialState, reducer } from "./reducer";
 
 const Generator = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
