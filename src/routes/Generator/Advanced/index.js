@@ -52,7 +52,7 @@ const Advanced = ({ state, dispatch }) => {
         </FormItem>
         <FormItem
           label="Theme color"
-          data-tip="Defines the theme color for the document, sometimes used to customize web browser UIs on the page."
+          tooltip="Defines the theme color for the document, sometimes used to customize web browser UIs on the page."
         >
           <ColorInput
             onChange={(e) => handleThemeColor(dispatch, e)}
