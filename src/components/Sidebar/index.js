@@ -19,7 +19,7 @@ const Sidebar = ({ activeTab }) => (
       Advanced
     </Link>
     <Link
-      className="p-2 rounded-lg text-white bg-blue-500 hover:bg-blue-400 text-center"
+      className="p-2 rounded-lg text-white bg-[#3b82f6] hover:bg-blue-400 text-center"
       to="../complete"
     >
       Generate

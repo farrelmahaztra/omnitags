@@ -5,7 +5,7 @@ const Header = () => (
     <nav className="relative z-50 flex mx-12 justify-start items-center">
       <Link to="/">
         <h1 className="text-3xl text-slate-900 font-title mr-12">
-          Omni<span className="text-blue-600">Tags</span>
+          Omni<span className="text-[#3b82f6]">Tags</span>
         </h1>
       </Link>
       <div className="font-body md:flex md:gap-x-6 text-lg items-center">
