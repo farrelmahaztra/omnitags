@@ -1,7 +1,23 @@
 import Layout from "../../../components/Layout";
 import { copyToClipboard } from "./utils.js";
+import { State } from "../reducer";
 
-const Complete = ({ state }) => {
+interface CompleteProps {
+  state: State;
+}
+
+interface TitleTagProps {
+  title: string;
+}
+
+interface MetaTagProps { 
+  className?: string;
+  name?: string;
+  property?: string;
+  content: string
+}
+
+const Complete = ({ state }: CompleteProps) => {
   const {
     title,
     description,
@@ -20,7 +36,7 @@ const Complete = ({ state }) => {
     profileGender,
   } = state;
 
-  const TitleTag = ({ title }) => (
+  const TitleTag = ({ title }: TitleTagProps ) => (
     <span className="block">
       &lt;
       <span className="text-red-500">title</span>&gt;{title}&lt;/
@@ -36,7 +52,7 @@ const Complete = ({ state }) => {
     </span>
   );
 
-  const MetaTag = ({ className = "block", name, property, content }) => {
+  const MetaTag = ({ className = "block", name, property, content }: MetaTagProps) => {
     return (
       <span className={className}>
         &lt;
