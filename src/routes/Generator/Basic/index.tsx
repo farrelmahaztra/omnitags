@@ -1,14 +1,23 @@
+import React from "react";
 import Layout from "../../../components/Layout";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
 import FormItem from "../../../components/FormItem";
+import { State } from "../reducer";
 import ogTypes from "./ogtypes.json";
 
-const Basic = ({ state, dispatch }) => {
+interface BasicProps {
+  state: State;
+  dispatch: React.Dispatch<any>;
+}
+
+const Basic = ({ state, dispatch }: BasicProps) => {
   const { title, description, url, imageUrl, objectType, siteName } = state;
 
-  const handleInput = (event) => {
+  const handleInput = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     dispatch({
       type: "UPDATE",
       payload: { key: event.target.name, value: event.target.value },
@@ -22,11 +31,7 @@ const Basic = ({ state, dispatch }) => {
           label="Title"
           tooltip="Defines the document's title, shown in the browser tab and almost always shown in search results and link unfurls (recommended <=64 characters)"
         >
-          <TextInput
-            onChange={handleInput}
-            name="title"
-            value={title || ""}
-          />
+          <TextInput onChange={handleInput} name="title" value={title || ""} />
         </FormItem>
         <FormItem
           label="Description"
@@ -35,7 +40,7 @@ const Basic = ({ state, dispatch }) => {
           <textarea
             className="mt-1 block w-full rounded-md bg-slate-100 border-transparent focus:border-slate-200 focus:ring-0"
             placeholder=""
-            rows="4"
+            rows={4}
             onChange={handleInput}
             name="description"
             value={description || ""}
@@ -45,11 +50,7 @@ const Basic = ({ state, dispatch }) => {
           label="Website URL"
           tooltip="Defines the document's URL, sometimes used in search results or link unfurls"
         >
-          <TextInput
-            onChange={handleInput}
-            name="url"
-            value={url || ""}
-          />
+          <TextInput onChange={handleInput} name="url" value={url || ""} />
         </FormItem>
         <FormItem
           label="Image URL"
