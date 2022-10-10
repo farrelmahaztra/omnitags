@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./routes/About";
@@ -6,7 +5,9 @@ import Generator from "./routes/Generator";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const rootElement = document.getElementById("root") as Element;
+const root = ReactDOM.createRoot(rootElement);
+
 root.render(
   <BrowserRouter>
     <Routes>

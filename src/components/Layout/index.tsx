@@ -1,7 +1,14 @@
+import React from "react";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 
-const Layout = ({ tab, children, hasSidebar }) => (
+interface LayoutProps {
+  tab?: string;
+  hasSidebar?: boolean;
+  children: React.ReactNode;
+}
+
+const Layout = ({ tab, children, hasSidebar = false }: LayoutProps) => (
   <div className="min-h-screen flex flex-col">
     <Header />
     <div className="flex flex-auto flex-col md:flex-row md:max-h-[92vh]">
