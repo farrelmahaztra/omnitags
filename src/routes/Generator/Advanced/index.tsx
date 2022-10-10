@@ -1,3 +1,4 @@
+import React from "react";
 import Layout from "../../../components/Layout";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
@@ -5,9 +6,15 @@ import SelectInput from "../../../components/SelectInput";
 import DateInput from "../../../components/DateInput";
 import ColorInput from "../../../components/ColorInput";
 import FormItem from "../../../components/FormItem";
+import { State } from "../reducer";
 import locales from "./locales.json";
 
-const Advanced = ({ state, dispatch }) => {
+interface AdvancedProps {
+  state: State;
+  dispatch: React.Dispatch<any>;
+}
+
+const Advanced = ({ state, dispatch }: AdvancedProps) => {
   const {
     title,
     description,
@@ -26,7 +33,7 @@ const Advanced = ({ state, dispatch }) => {
     profileGender,
   } = state;
 
-  const handleInput = (event) => {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch({
       type: "UPDATE",
       payload: { key: event.target.name, value: event.target.value },
