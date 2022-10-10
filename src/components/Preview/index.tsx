@@ -4,7 +4,21 @@ import Instagram from "./Instagram";
 import Slack from "./Slack";
 import LINE from "./LINE";
 
-const Preview = ({ title, description, url, imageUrl, siteName }) => (
+interface PreviewProps {
+  title: string;
+  description: string;
+  url: string;
+  imageUrl: string;
+  siteName: string;
+}
+
+const Preview = ({
+  title,
+  description,
+  url,
+  imageUrl,
+  siteName,
+}: PreviewProps) => (
   <>
     <Google title={title} description={description} url={url} />
     <Twitter

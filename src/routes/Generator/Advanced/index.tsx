@@ -33,7 +33,7 @@ const Advanced = ({ state, dispatch }: AdvancedProps) => {
     profileGender,
   } = state;
 
-  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     dispatch({
       type: "UPDATE",
       payload: { key: event.target.name, value: event.target.value },

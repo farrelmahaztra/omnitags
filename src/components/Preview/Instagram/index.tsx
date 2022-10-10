@@ -1,6 +1,13 @@
-import defaultImage from "../../../static/img/default.jpg";
+const defaultImage = require("../../../static/img/default.jpg");
 
-const Instagram = ({ title, description, url, imageUrl }) => (
+interface InstagramProps {
+  title: string;
+  description: string;
+  url: string;
+  imageUrl: string;
+}
+
+const Instagram = ({ title, description, url, imageUrl }: InstagramProps) => (
   <label className="block mb-5">
     <span className="text-slate-800">Instagram (Direct Message)</span>
     <div className="max-w-[444px] min-h-[374px] w-full flex flex-col relative overflow-hidden mt-5 bg-[#efefef] rounded-[20px] cursor-pointer">

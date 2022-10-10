@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
-const Sidebar = ({ activeTab }) => (
+interface SidebarProps {
+  activeTab?: string;
+}
+
+const Sidebar = ({ activeTab }: SidebarProps) => (
   <div className="flex flex-auto flex-col min-w-1/12 p-5 border border-r-0 border-slate-200">
     <Link
       className={`mb-3 p-2 rounded-lg text-slate-600 hover:bg-slate-100 ${

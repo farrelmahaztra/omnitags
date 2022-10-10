@@ -1,4 +1,10 @@
-const Google = ({ title, description, url }) => (
+interface GoogleProps {
+  title: string;
+  description: string;
+  url: string;
+}
+
+const Google = ({ title, description, url }: GoogleProps) => (
   <label className="block mb-5">
     <span className="text-slate-800">Google</span>
     <div className="max-w-[600px] flex flex-col relative overflow-hidden mt-5">

@@ -15,7 +15,7 @@ interface BasicProps {
 const Basic = ({ state, dispatch }: BasicProps) => {
   const { title, description, url, imageUrl, objectType, siteName } = state;
 
-  const handleInput = (
+  const handleInput: React.ChangeEventHandler = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     dispatch({

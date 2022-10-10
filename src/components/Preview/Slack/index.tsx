@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
-import defaultImage from "../../../static/img/default.jpg";
+const defaultImage = require("../../../static/img/default.jpg");
 
-const Slack = ({ title, description, imageUrl, siteName }) => (
+interface SlackProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+  siteName: string;
+}
+
+const Slack = ({ title, description, imageUrl, siteName }: SlackProps) => (
   <label className="block mb-5">
     <span className="text-slate-800">Slack</span>
     <div className="max-w-[600px] min-h-[304px] flex relative overflow-hidden mt-5">

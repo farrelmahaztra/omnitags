@@ -1,6 +1,12 @@
-import defaultImage from "../../../static/img/default.jpg";
+const defaultImage = require("../../../static/img/default.jpg");
 
-const LINE = ({ title, description, imageUrl }) => (
+interface LINEProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+const LINE = ({ title, description, imageUrl }: LINEProps) => (
   <label className="block mb-5">
     <span className="text-slate-800">LINE Messenger</span>
     <div className="max-w-[400px] min-h-[322px] w-full flex flex-col relative overflow-hidden mt-5 bg-[#9de693] rounded-[20px] cursor-pointer">

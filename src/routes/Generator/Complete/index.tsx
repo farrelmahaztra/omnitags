@@ -1,5 +1,5 @@
 import Layout from "../../../components/Layout";
-import { copyToClipboard } from "./utils.js";
+import { copyToClipboard } from "./utils";
 import { State } from "../reducer";
 
 interface CompleteProps {

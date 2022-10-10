@@ -1,3 +1,5 @@
+import { State } from "../reducer";
+
 export const copyToClipboard = ({
   title,
   description,
@@ -14,7 +16,7 @@ export const copyToClipboard = ({
   profileLastName,
   profileUsername,
   profileGender,
-}) => {
+}: State) => {
   navigator.clipboard.writeText(
     `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
