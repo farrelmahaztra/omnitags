@@ -42,7 +42,7 @@ const Advanced = ({ state, dispatch }: AdvancedProps) => {
 
   return (
     <Layout tab="advanced" hasSidebar>
-      <div className="flex flex-col md:w-2/5 border-r p-6">
+      <div className="form-group flex flex-col md:w-2/5 border-r p-6">
         <FormItem
           label="Site name"
           tooltip="Defines the site name for the document, sometimes used in link unfurls"

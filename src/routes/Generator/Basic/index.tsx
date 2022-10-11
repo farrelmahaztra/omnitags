@@ -63,7 +63,7 @@ const Basic = ({ state, dispatch }: BasicProps) => {
           />
         </FormItem>
         <FormItem
-          label="Object Type"
+          label="Object type"
           tooltip="Defines the document's object type as per OpenGraph specifications"
         >
           <SelectInput
