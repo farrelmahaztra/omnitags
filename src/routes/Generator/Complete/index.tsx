@@ -86,7 +86,7 @@ const Complete = ({ state }: CompleteProps) => {
       <div className="flex flex-col w-full p-6">
         <code
           id="metatags"
-          className="mt-1 font-mono relative w-full min-h-[100%] p-6 rounded-lg text-slate-100 bg-slate-800 border-transparent focus:border-slate-900 focus:ring-0"
+          className="mt-1 font-mono relative w-full min-h-[100%] p-6 rounded-lg text-slate-100 bg-slate-800 border-transparent focus:border-slate-900 focus:ring-0 overflow-y-scroll"
         >
           <MetaCharsetTag />
           <MetaTag
@@ -175,7 +175,7 @@ const Complete = ({ state }: CompleteProps) => {
           />
         </code>
         <button
-          className="w-full mt-4 md:w-fit md:mt-0 md:absolute md:bottom-8 md:right-8 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400 text-white"
+          className="w-full mt-4 md:w-fit md:mt-0 md:absolute md:bottom-12 md:right-12 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400 text-white"
           onClick={() => {
             copyToClipboard(state);
             alert("Copied!");
