@@ -175,7 +175,7 @@ const Complete = ({ state }: CompleteProps) => {
           />
         </code>
         <button
-          className="mt-8 float-right md:mt-0 md:absolute md:bottom-6 md:right-6 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400"
+          className="w-full mt-4 md:w-fit md:mt-0 md:absolute md:bottom-8 md:right-8 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400 text-white"
           onClick={() => {
             copyToClipboard(state);
             alert("Copied!");
