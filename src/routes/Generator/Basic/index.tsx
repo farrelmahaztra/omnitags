@@ -26,7 +26,7 @@ const Basic = ({ state, dispatch }: BasicProps) => {
 
   return (
     <Layout tab="basic" hasSidebar>
-      <div className="flex flex-col md:w-2/5 border-r p-6">
+      <div className="form-group flex flex-col md:w-2/5 border-r p-6">
         <FormItem
           label="Title"
           tooltip="Defines the document's title, shown in the browser tab and almost always shown in search results and link unfurls (recommended <=64 characters)"

@@ -10,11 +10,11 @@ interface TitleTagProps {
   title: string;
 }
 
-interface MetaTagProps { 
+interface MetaTagProps {
   className?: string;
   name?: string;
   property?: string;
-  content: string
+  content: string;
 }
 
 const Complete = ({ state }: CompleteProps) => {
@@ -36,7 +36,7 @@ const Complete = ({ state }: CompleteProps) => {
     profileGender,
   } = state;
 
-  const TitleTag = ({ title }: TitleTagProps ) => (
+  const TitleTag = ({ title }: TitleTagProps) => (
     <span className="block">
       &lt;
       <span className="text-red-500">title</span>&gt;{title}&lt;/
@@ -52,7 +52,12 @@ const Complete = ({ state }: CompleteProps) => {
     </span>
   );
 
-  const MetaTag = ({ className = "block", name, property, content }: MetaTagProps) => {
+  const MetaTag = ({
+    className = "block",
+    name,
+    property,
+    content,
+  }: MetaTagProps) => {
     return (
       <span className={className}>
         &lt;
@@ -168,17 +173,16 @@ const Complete = ({ state }: CompleteProps) => {
             property="twitter:image"
             content={imageUrl || "ADD YOUR IMAGE URL HERE"}
           />
-
-          <button
-            className="mt-8 float-right md:mt-0 md:absolute md:bottom-6 md:right-6 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400"
-            onClick={() => {
-              copyToClipboard(state);
-              alert("Copied!");
-            }}
-          >
-            Copy to clipboard
-          </button>
         </code>
+        <button
+          className="mt-8 float-right md:mt-0 md:absolute md:bottom-6 md:right-6 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400"
+          onClick={() => {
+            copyToClipboard(state);
+            alert("Copied!");
+          }}
+        >
+          Copy to clipboard
+        </button>
       </div>
     </Layout>
   );
