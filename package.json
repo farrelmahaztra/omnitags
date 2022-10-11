@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js",
-    "cypress": "cypress open"
+    "cypress": "cypress run --browser firefox --record false --spec 'cypress/e2e/spec.cy.ts'"
   },
   "eslintConfig": {
     "extends": [
