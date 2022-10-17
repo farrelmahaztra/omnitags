@@ -34,29 +34,26 @@ const Complete = () => {
   } = useContext(GeneratorContext);
 
   const TitleTag = ({ title }: TitleTagProps) => (
-    <span className="block">
+    <span>
       &lt;
       <span className="text-red-500">title</span>&gt;{title}&lt;/
       <span className="text-red-500">title</span>&gt;
+      <br />
     </span>
   );
 
   const MetaCharsetTag = () => (
-    <span className="block">
+    <span>
       &lt;
       <span className="text-red-500">meta</span> charset="
       <span className="text-blue-300">utf-8</span>"&gt;
+      <br />
     </span>
   );
 
-  const MetaTag = ({
-    className = "block",
-    name,
-    property,
-    content,
-  }: MetaTagProps) => {
+  const MetaTag = ({ name, property, content }: MetaTagProps) => {
     return (
-      <span className={className}>
+      <span>
         &lt;
         <span className="text-red-500">meta</span>
         {name && (
@@ -74,6 +71,7 @@ const Complete = () => {
         content="
         <span className="text-blue-300">{content}</span>
         "&gt;
+        <br />
       </span>
     );
   };
@@ -94,12 +92,8 @@ const Complete = () => {
           <TitleTag title={title} />
           <MetaTag name="title" content={title} />
           <MetaTag name="robots" content="index, follow" />
-          <MetaTag
-            className="block mb-10"
-            name="description"
-            content={description}
-          />
-
+          <MetaTag name="description" content={description} />
+          <br />
           <MetaTag property="og:type" content={objectType} />
           {objectType === "article" && (
             <>
@@ -156,12 +150,8 @@ const Complete = () => {
             content={imageUrl || "ADD YOUR IMAGE URL HERE"}
           />
           <MetaTag property="og:locale" content={locale} />
-          <MetaTag
-            className="block mb-10"
-            property="og:site_name"
-            content={siteName || title}
-          />
-
+          <MetaTag property="og:site_name" content={siteName || title} />
+          <br />
           <MetaTag property="twitter:card" content="summary_large_image" />
           <MetaTag property="twitter:url" content={url} />
           <MetaTag property="twitter:title" content={title} />
