@@ -1,4 +1,4 @@
-export interface State {
+export interface GeneratorState {
   title: string;
   description: string;
   url: string;
@@ -16,7 +16,7 @@ export interface State {
   profileGender: string;
 }
 
-export interface Action {
+export interface GeneratorAction {
   type: string;
   payload: {
     key: string;
@@ -24,7 +24,7 @@ export interface Action {
   };
 }
 
-export const initialState: State = {
+export const initialState: GeneratorState = {
   title: "OmniTags - Meta Tag Generator",
   description:
     "Meta tags can be a hassle — it's hard to keep track of which ones help or hurt your SEO ranking. Our tool makes sure your business's website serves up the right tags and unfurls perfectly on every platform.",
@@ -43,7 +43,7 @@ export const initialState: State = {
   profileGender: "male",
 };
 
-export const reducer = (state: State, action: Action) => {
+export const reducer = (state: GeneratorState, action: GeneratorAction) => {
   switch (action.type) {
     case "UPDATE":
       return { ...state, [action.payload.key]: action.payload.value };
