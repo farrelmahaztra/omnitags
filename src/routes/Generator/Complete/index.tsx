@@ -1,10 +1,7 @@
+import { useContext } from "react";
 import Layout from "../../../components/Layout";
 import { copyToClipboard } from "./utils";
-import { State } from "../reducer";
-
-interface CompleteProps {
-  state: State;
-}
+import { GeneratorContext } from "../context";
 
 interface TitleTagProps {
   title: string;
@@ -17,7 +14,7 @@ interface MetaTagProps {
   content: string;
 }
 
-const Complete = ({ state }: CompleteProps) => {
+const Complete = () => {
   const {
     title,
     description,
@@ -34,7 +31,7 @@ const Complete = ({ state }: CompleteProps) => {
     profileLastName,
     profileUsername,
     profileGender,
-  } = state;
+  } = useContext(GeneratorContext);
 
   const TitleTag = ({ title }: TitleTagProps) => (
     <span className="block">
@@ -177,7 +174,23 @@ const Complete = ({ state }: CompleteProps) => {
         <button
           className="w-full mt-4 md:w-fit md:mt-0 md:absolute md:bottom-12 md:right-12 bg-slate-500 p-2 rounded-lg font-body hover:bg-slate-400 text-white"
           onClick={() => {
-            copyToClipboard(state);
+            copyToClipboard({
+              title,
+              description,
+              url,
+              imageUrl,
+              objectType,
+              locale,
+              siteName,
+              themeColor,
+              publishedTime,
+              modifiedTime,
+              expirationTime,
+              profileFirstName,
+              profileLastName,
+              profileUsername,
+              profileGender,
+            });
             alert("Copied!");
           }}
         >

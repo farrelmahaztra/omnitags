@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Layout from "../../../components/Layout";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
@@ -6,15 +6,10 @@ import SelectInput from "../../../components/SelectInput";
 import DateInput from "../../../components/DateInput";
 import ColorInput from "../../../components/ColorInput";
 import FormItem from "../../../components/FormItem";
-import { State } from "../reducer";
+import { GeneratorContext, GeneratorDispatchContext } from "../context";
 import locales from "./locales.json";
 
-interface AdvancedProps {
-  state: State;
-  dispatch: React.Dispatch<any>;
-}
-
-const Advanced = ({ state, dispatch }: AdvancedProps) => {
+const Advanced = () => {
   const {
     title,
     description,
@@ -31,9 +26,12 @@ const Advanced = ({ state, dispatch }: AdvancedProps) => {
     profileLastName,
     profileUsername,
     profileGender,
-  } = state;
+  } = useContext(GeneratorContext);
+  const dispatch = useContext(GeneratorDispatchContext);
 
-  const handleInput = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInput = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     dispatch({
       type: "UPDATE",
       payload: { key: event.target.name, value: event.target.value },

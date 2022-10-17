@@ -1,19 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Layout from "../../../components/Layout";
 import Preview from "../../../components/Preview";
 import TextInput from "../../../components/TextInput";
 import SelectInput from "../../../components/SelectInput";
 import FormItem from "../../../components/FormItem";
-import { State } from "../reducer";
+import { GeneratorContext, GeneratorDispatchContext } from "../context";
 import ogTypes from "./ogtypes.json";
 
-interface BasicProps {
-  state: State;
-  dispatch: React.Dispatch<any>;
-}
-
-const Basic = ({ state, dispatch }: BasicProps) => {
-  const { title, description, url, imageUrl, objectType, siteName } = state;
+const Basic = () => {
+  const { title, description, url, imageUrl, objectType, siteName } =
+    useContext(GeneratorContext);
+  const dispatch = useContext(GeneratorDispatchContext);
 
   const handleInput: React.ChangeEventHandler = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
